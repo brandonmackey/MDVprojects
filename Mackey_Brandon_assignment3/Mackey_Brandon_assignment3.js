@@ -82,6 +82,20 @@ var json = {
 
 
 
+// array
+
+var ichatStudentsGuys = new Array("Dave", "Mo", "Joe", "Kurt", "Chris", "Michael");
+var ichatStudentsGals = new Array("Sabra", "Julie", "Katie", "Amanda", "Randi", "Kathy");
+
+var studentLookup = ichatStudentsGuys.concat(ichatStudentsGals);
+
+
+    
+
+
+
+
+
 
 
 
