@@ -24,6 +24,23 @@ function checkFace(xxxx) {
         return checkFace    
 };
 
+ 
+// number w/while loop , local var 
+
+var passwordFail = function(failedCode){
+    var lockOut = 5;
+	while (failedCode > 2 - 1 ){
+		console.log("Error! Wrong password try again. " + failedCode + " more attempts")	
+		failedCode--;
+		
+	}
+	console.log("You got it!.");
+	return lockOut;
+};
+
+
+
+
 
 
 
