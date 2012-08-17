@@ -40,6 +40,45 @@ var passwordFail = function(failedCode){
 
 
 
+// string
+
+function socialChat(xxxx){
+    var logOn = true
+        if (logOn === true) {
+		console.log(app +" opens up.");
+	
+	} else { 
+		console.log("logged out. Must enter user name and xxxx");
+	};
+	return logOn;
+};
+
+
+
+// json data for ichat "aim" app for phone
+
+var json = {
+    "teachers":{
+        "1234":{
+            name : "Lee",
+            age  : 35,
+            email: "llewis@fullsail.com"
+        },
+        "1235":{
+            name : "Jen",
+            age  : 29,
+            email: "jmccarrick@fullsail.com"
+        },
+        "1236":{
+            name : "Chad",
+            age  : 32,
+            email: "fschad@me.com"
+        },
+    
+    },    
+
+};
+
 
 
 
