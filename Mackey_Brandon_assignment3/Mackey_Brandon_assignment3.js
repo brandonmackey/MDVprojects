@@ -93,6 +93,38 @@ var studentLookup = ichatStudentsGuys.concat(ichatStudentsGals);
     
 
 
+// object
+
+function project(name, dueDate){
+    this.name  = name;
+    this.dueDate = dueDate;
+    this.SDIproject3Due = daysTillDue;
+}
+
+function daysTillDue(){
+    var daysLeft = 7 - this.dueDate;
+    return daysLeft;
+}
+
+var project3 = new project("SDI Project 3", 8);
+
+
+// Returned Values
+
+checkFace("password");
+
+var returnlockOut = passwordFail(phLock);
+
+socialChat("password");
+
+for (var key in json.teachers){
+    var teacher = json.teachers[key]
+    console.log(teacher.email);
+    
+console.log(studentLookup[1]);
+
+console.log(project3.SDIproject3Due());
+};
 
 
 
