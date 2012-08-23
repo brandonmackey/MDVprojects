@@ -22,16 +22,18 @@ var myLibrary = function(){
     
     // Format a number to use a specific number of decimal places, as for money:
 
-
+    var myNum = function(profits){
+        var twoDecimal = profits.toFixed(2)  //returns 3.14
+        
+        return twoDecimal
     
-    
-    
+    };
     
     
     
     return{
-        "daysTill": daysTill
-    
+        "daysTill": daysTill,
+        "myNum"   : myNum
     };
     
     
@@ -42,3 +44,4 @@ var myLibrary = function(){
 var newLib = new myLibrary();
 
 console.log("There are " + newLib.daysTill("2012,07,22", "2013,06,17") + " days till my birthday!" );
+console.log("I like " + newLib.myNum(3.14159) + "!");
