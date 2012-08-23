@@ -29,19 +29,43 @@ var myLibrary = function(){
     
     };
     
-    
-    
+
+    // Given a string version of a number such as "42", return the value as an actual Number, such as 42.
+
+    var myNum2  = function(oldString){
+	    if(isNaN(oldString)){
+		numToString = "Sorry items in string not numbers";
+		}
+		else
+		{
+		numToString = Number(oldString);
+		return numToString;
+	    };
+	};
+
+
+
+
+
+
+
+
+
+
     return{
         "daysTill": daysTill,
-        "myNum"   : myNum
+        "myNum"   : myNum,
+        "myNum2"  : myNum2
+    
+    
     };
     
     
     
 };
 
-
 var newLib = new myLibrary();
 
-console.log("There are " + newLib.daysTill("2012,07,22", "2013,06,17") + " days till my birthday!" );
-console.log("I like " + newLib.myNum(3.14159) + "!");
+console.log(newLib.daysTill("2012,07,22", "2013,06,17"));
+console.log(newLib.myNum(3.14159));
+console.log(newLib.myNum2("14732"));
