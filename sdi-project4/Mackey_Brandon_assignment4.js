@@ -23,13 +23,12 @@ var myLibrary = function(){
     // Format a number to use a specific number of decimal places, as for money:
 
     var myNum = function(profits){
-        var twoDecimal = profits.toFixed(2)  //returns 3.14
+            var twoDecimal = profits.toFixed(2)  //returns 3.14
         
-        return twoDecimal
+            return twoDecimal
+        };
     
-    };
     
-
     // Given a string version of a number such as "42", return the value as an actual Number, such as 42.
 
     var myNum2  = function(oldString){
@@ -65,6 +64,12 @@ var myLibrary = function(){
 	};
 
 
+    // Does a string follow a 123-456-7890 pattern like a phone number?
+    
+    var myPhNum = function (callMe) {
+		var re = /\d{3}-\d{3}-\d{4}/;  // RegEx for phone Validation
+		return re.test(callMe);
+	};
 
 
 
@@ -74,8 +79,8 @@ var myLibrary = function(){
         "myNum"   : myNum,
         "myNum2"  : myNum2,
         "myEmail" : myEmail,
-        "checkURL": checkURL
-    
+        "checkURL": checkURL,
+        "myPhNum" : myPhNum
     };
     
     
@@ -88,4 +93,5 @@ console.log(newLib.daysTill("2012,07,22", "2013,06,17"));
 console.log(newLib.myNum(3.14159));
 console.log(newLib.myNum2("14732"));
 console.log(newLib.myEmail("brandonmackey@fullsail.edu"));
-console.log(newLib.checkURL("www.fullsail.com")); 
+console.log(newLib.checkURL("www.fullsail.com"));
+console.log(newLib.myPhNum("555-555-5555"));
