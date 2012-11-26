@@ -1,3 +1,4 @@
+// Added Nov 26 @ 3:10pm
 $('#home').on('pageinit', function(){
 	//code needed for home page goes here
 });	
@@ -60,27 +61,27 @@ var getData = function(){
         //if ($("#items")){
 	   // $("#items").innerHTML="";
 	} else {
-	var makeDiv = .create('div');
+	var makeDiv = document.createElement('div');
         makeDiv.setAttribute("id", "listItem");
 	//makeDiv.setAttribute("data-role", "listview");
-        var makeList = .create('ul');
+        var makeList = document.createElement('ul');
         makeDiv.appendChild(makeList);
         //document.body.appendChild(makeDiv);
 	$('#items').append(makeDiv);
         //$('#items').style.display = "block";
         for (var i=0, len=localStorage.length; i<len; i++){
-            var makeLi = .create('Li');
-	    var linksLi =.create('li');
+            var makeLi = document.createElement('Li');
+	    var linksLi =document.createElement('li');
             makeList.appendChild(makeLi);
             var key =localStorage.key(i);
             var value = localStorage.getItem(key);
             // convert the string from local storage value back to an object by JSON.parse  
             var obj = JSON.parse(value);
-            var makeSubList = .create('ul');
+            var makeSubList = document.createElement('ul');
             makeLi.appendChild(makeSubList);
             //getImage(obj.group[1], makeSubList);
 	    for (var n in obj){
-                var makeSubLi = .create('li');
+                var makeSubLi = document.createElement('li');
                 makeSubList.appendChild(makeSubLi);
                 var optSubText = obj[n] [0]+""+obj [n][1];
                 makeSubLi.innerHTML = optSubText;
