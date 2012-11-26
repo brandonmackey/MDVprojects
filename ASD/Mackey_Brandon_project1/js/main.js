@@ -32,6 +32,9 @@ $('#additem').on('pageinit', function(){
 
 $('#displayPage').on('pageinit', function(){
 	getData();
+	$('#deleteItem').bind("click", deleteItem);
+	
+	
 });
 
 
@@ -49,35 +52,35 @@ var autoFillData = function (){
 
 var getData = function(){
    if(localStorage.length === 0){
-            alert("There is no data in Local Storage so default data was added.");
-	    autoFillData();
+           //alert("There is no data in Local Storage so default data was added.");
+	   // autoFillData();
 	    // -- Comment Out Reload Page when using Test JSON Data Uncommit when not testing!! --
             //window.location.reload();
         //}
         //if ($("#items")){
 	   // $("#items").innerHTML="";
 	} else {
-	var makeDiv = document.createElement('div');
+	var makeDiv = .create('div');
         makeDiv.setAttribute("id", "listItem");
 	//makeDiv.setAttribute("data-role", "listview");
-        var makeList = document.createElement('ul');
+        var makeList = .create('ul');
         makeDiv.appendChild(makeList);
         //document.body.appendChild(makeDiv);
 	$('#items').append(makeDiv);
         //$('#items').style.display = "block";
         for (var i=0, len=localStorage.length; i<len; i++){
-            var makeLi = document.createElement('Li');
-	    var linksLi =document.createElement('li');
+            var makeLi = .create('Li');
+	    var linksLi =.create('li');
             makeList.appendChild(makeLi);
             var key =localStorage.key(i);
             var value = localStorage.getItem(key);
             // convert the string from local storage value back to an object by JSON.parse  
             var obj = JSON.parse(value);
-            var makeSubList = document.createElement('ul');
+            var makeSubList = .create('ul');
             makeLi.appendChild(makeSubList);
             //getImage(obj.group[1], makeSubList);
 	    for (var n in obj){
-                var makeSubLi = document.createElement('li');
+                var makeSubLi = .create('li');
                 makeSubList.appendChild(makeSubLi);
                 var optSubText = obj[n] [0]+""+obj [n][1];
                 makeSubLi.innerHTML = optSubText;
@@ -102,13 +105,13 @@ var storeData = function(data){
         //getCheckBoxValue();
         var item            ={};
             item.group      =["Type: ", $('#groups').val()];
-            //item.importance =["Priority:", priorityValue];
+            item.importance =["Priority:", $('input:radio[name=importance]:checked').val()];
             item.date       =["Date: ", $('#date').val()];
             item.quantity   =["Quantity: ", $('#range').val()];
             item.what       =["What: ", $('#what').val()];
             item.where      =["Where: ", $('#where').val()];
             item.notes      =["Notes: ", $('#notes').val()];
-            //item.favorite   =["Favorite:", favoriteValue];
+            item.favorite   =["Favorite:", $('#fav').val()];
         localStorage.setItem(id, JSON.stringify(item));
         alert("Your List has been Saved!");
         location.reload();
@@ -116,8 +119,17 @@ var storeData = function(data){
 
 
 var	deleteItem = function (){
-
+	ask = confirm("Are you sure you want to delete this List?");
+	if(ask){
+	    localStorage.clear(this.key);
+	    alert("List was deleted!");
+	    window.location.reload();
+	}else{
+	    alert("List was NOT deleted.");
+	}
+    
 };
+
 
 var clearLocal = function(){
    if(localStorage.length === 0){

@@ -21,9 +21,9 @@ window.addEventListener("DOMContentLoaded", function(){
             selectLi = $('select'),
             makeSelect = document.createElement('select');
             makeSelect.setAttribute("id", "groups");
-        for(var i=0, j=dropList.length; i<j; i++){
+        for(var i=0, j=newDropList.length; i<j; i++){
             var makeOption = document.createElement('option');
-            var optText = dropList[i];
+            var optText = newDropList[i];
             makeOption.setAttribute("value", optText);
             makeOption.innerHTML = optText;
             makeSelect.appendChild(makeOption);
@@ -93,14 +93,14 @@ window.addEventListener("DOMContentLoaded", function(){
 	getSelectedRadio();
         getCheckBoxValue();
         var item            ={};
-            item.group      =["Type:", $('groups').value];
-            item.importance =["Priority:", priorityValue];
-            item.date       =["Date:", $('date').value];
-            item.quantity   =["Quantity:", $('range').value];
-            item.what       =["What:", $('what').value];
-            item.where      =["Where:", $('where').value];
-            item.notes      =["Notes:", $('notes').value];
-            item.favorite   =["Favorite:", favoriteValue];
+            item.group      =["Type: ", $('groups').value];
+            item.importance =["Priority: ", priorityValue];
+            item.date       =["Date: ", $('date').value];
+            item.quantity   =["Quantity: ", $('range').value];
+            item.what       =["What: ", $('what').value];
+            item.where      =["Where: ", $('where').value];
+            item.notes      =["Notes: ", $('notes').value];
+            item.favorite   =["Favorite: ", favoriteValue];
         localStorage.setItem(id, JSON.stringify(item));
         alert("Your List has been Saved!");
         window.location.reload();
@@ -327,6 +327,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     // variables defaults
     var dropList = ["--Choose A List--", "Grocery_List", "Don't_Forget!", "Wish_List", "Honey_Do_List!" ],
+	newDropList = ["--Choose A List--", "Grocery List", "Don't Forget!", "Wish List", "Honey Do List!" ],
         priorityValue,
         favoriteValue = "No",
         newValue,

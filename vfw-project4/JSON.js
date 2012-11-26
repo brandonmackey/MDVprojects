@@ -8,7 +8,7 @@ VFW JSON Object for Testing
 
 var json = {
     "list1":{
-	"group"	    : ["Type:", "Don't Forget!"],
+	"group"	    : ["Type:", "Don't_Forget!"],
 	"importance": ["Priority:", "High Priority" ],
 	"date"	    : ["Date:", "2012-07-17"],
 	"quantity"  : ["Quantity:", "1"],
@@ -18,7 +18,7 @@ var json = {
 	"favorite"  : ["Favorite:", "Yes"]
     },
     "list2":{
-	"group"	    : ["Type:", "Honey Do List!"],
+	"group"	    : ["Type:", "Honey_Do_List!"],
 	"importance": ["Priority:", "Low Priority" ],
 	"date"	    : ["Date:", "2012-09-25"],
 	"quantity"  : ["Quantity:", "0"],
@@ -28,7 +28,7 @@ var json = {
 	"favorite"  : ["Favorite:", "No"]
     },
     "list3":{
-	"group"	    : ["Type:", "Grocery List"],
+	"group"	    : ["Type:", "Grocery_List"],
 	"importance": ["Priority:", "High Priority" ],
 	"date"	    : ["Date:", "2012-09-16"],
 	"quantity"  : ["Quantity:", "1"],
