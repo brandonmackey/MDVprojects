@@ -1,8 +1,7 @@
-// Added Nov 26 @ 3:10pm
 $('#home').on('pageinit', function(){
 	//code needed for home page goes here
 });	
-		
+
 $('#additem').on('pageinit', function(){
     delete $.validator.methods.date;
     var myForm = $('#additemform'),
@@ -27,13 +26,13 @@ $('#additem').on('pageinit', function(){
     });
 	
 	//any other code needed for addItem page goes here
-	$('#clear').bind("click", clearLocal);
+	$('#clear').on("click", clearLocal);
 });
 
 
 $('#displayPage').on('pageinit', function(){
 	getData();
-	$('#deleteItem').bind("click", deleteItem);
+	$('#deleteItem').on("click", deleteItem);
 	
 	
 });
@@ -122,6 +121,7 @@ var storeData = function(data){
 var	deleteItem = function (){
 	ask = confirm("Are you sure you want to delete this List?");
 	if(ask){
+	    // .remove will not delete the list So .clear was inserted
 	    localStorage.clear(this.key);
 	    alert("List was deleted!");
 	    window.location.reload();
