@@ -37,11 +37,80 @@ $('#displayPage').on('pageinit', function(){
 });
 
 $('#ajax').on('pageinit', function(){
-    $('#json').on('click', autoFillData);
-    $('#xml').on('click', autoFillData);
-    $('#csv').on('click', autoFillData);
-
+    $('#json').on('click', function(){
+	console.log("Display json");
+	$.ajax({
+	    url: 'xhr/data.json',
+	    type: 'GET',
+	    dataType: 'json',
+	    success: function(r){
+		console.log(r);
+		// your page building code will go here
+		for (var n in r){
+		    var list = r[n]
+		    $('<li>' + '<h3>' + n + '</h3>' +
+		        '<p>' + 'Type: ' + list['group'][1] +'</p>' +
+			'<p>' + 'Importance: ' + list['importance'][1] +'</p>' +
+			'<p>' + 'Date: ' + list['date'][1] +'</p>' +
+			'<p>' + 'Quantity: ' + list['quantity'][1] +'</p>' +
+			'<p>' + 'What: ' + list['what'][1] +'</p>' +
+			'<p>' + 'Where: ' + list['where'][1] +'</p>' +
+			'<p>' + 'Notes: ' + list['notes'][1] +'</p>' +
+			'<p>' + 'Favorite: ' + list['favorite'][1] +'</p>' +
+			'</li>' 
+		      
+		      ).appendTo('#viewData');
+		}
+		$('#viewData').listview('refresh');
+	    }
+	});
+	return false;
+    });
+    $('#xml').on('click', function(){
+	console.log("Display xml");
+	$.ajax({
+	    url: 'xhr/data.xml',
+	    type: 'GET',
+	    dataType: 'xml',
+	    success: function(r){
+		console.log(r);
+		// your page building code will go here
+		var items = $(r);
+		items.find("list").each(function(){
+		    var item = $(this);
+			$('<li>' + '<h3>' + item.find("group").text() + '</h3>' +
+			'<p>' + 'Importance: ' + item.find("importance").text() +'</p>' +
+			'<p>' + 'Date: ' + item.find("date").text() +'</p>' +
+			'<p>' + 'Quantity: ' + item.find("quantity").text() +'</p>' +
+			'<p>' + 'What: ' + item.find("what").text() +'</p>' +
+			'<p>' + 'Where: ' + item.find("where").text() +'</p>' +
+			'<p>' + 'Notes: ' + item.find("notes").text() +'</p>' +
+			'<p>' + 'Favorite: ' + item.find("favorite").text() +'</p>' +
+			'</li>' 
+		      
+		      ).appendTo('#viewData');
+		});
+		$('#viewData').listview('refresh');
+	    }
+	});
+	return false;
+    });
+    $('#csv').on('click', function(){
+	console.log("Display csv");
+	$.ajax({
+	    url: 'xhr/data.csv',
+	    type: 'GET',
+	    dataType: 'text',
+	    success: function(r){
+		console.log(r);
+		// your page building code will go here
+	    }
+	});
+	return false;
+    });
 });
+
+
 
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
@@ -55,14 +124,7 @@ var autoFillData = function (){
 	}
 };
 
-$.ajax({
-    url      : "data.json",
-    type     : "GET",
-    dataType : "json",
-    success  : function(data, status) {
-        console.log(status, data);
-    }
-});
+
 		
 		
 var getData = function(){

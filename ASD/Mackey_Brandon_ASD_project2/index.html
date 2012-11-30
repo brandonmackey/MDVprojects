@@ -288,10 +288,16 @@ Gold App
             </div>
 	<!-- CONTENT OF THE PAGE -->
             <div data-role="content" data-theme="a">
-		<p><a href="#" data-role="button" data-icon="arrow-r" data-theme="a" data-iconpos="right">JSON</a></p>
-		<p><a href="#" data-role="button" data-icon="arrow-r" data-theme="a" data-iconpos="right">XML</a></p>
-		<p><a href="#" data-role="button" data-icon="arrow-r" data-theme="a" data-iconpos="right">CSV</a></p>
+		<div data-role="content" id="dataDisplayMain">
+		    <div data-role="controlgroup" data-type="horizontal" id="dataButtons">
+			<a href="#data-items" data-role="button" id="json">JSON</a>
+			<a href="#data-items" data-role="button" id="xml">XML</a>
+			<a href="#data-items" data-role="button" id="csv">CSV</a>
+		    </div>
+		    <ul data-role="listview" data-inset="true" id="viewData"></ul>
+		    </div>
 	    </div>
+	    
 	<!-- THIS IS THE FOOTER -->
             <div data-role="footer" data-theme="a" data-position="fixed" data-id="home">
 		<div data-role="navbar">
