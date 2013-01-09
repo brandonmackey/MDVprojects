@@ -132,9 +132,44 @@ var	deleteItem = function (){
     
 };
 
+function editItem(){
+	// grab the data from local storage.
+	var value = localStorage.getItem(this.key);
+	var item = JSON.parse(value);
+	console.log(value);
+	
+	// populate the form fields with current localStorage values.
+	ge('groups').value = item.group[1];
+	var radios = document.forms[0].importance;
+	for(var i=0; i<radios.length; i++){
+	    if(radios[i].value =="High Priority" && item.importance[1] == "High Priority"){
+		radios[i].setAttribute("checked", "checked");
+	    }else if(radios[i].value == "Low Priority" && item.importance[1] == "Low Priority"){
+		radios[i].setAttribute("checked", "checked");
+	    }
+	ge('date').value = item.date[1];
+	ge('range').value = item.quantity[1];
+	ge('what').value = item.what[1];
+	ge('where').value = item.where[1];
+	ge('notes').value = item.notes[1];
+	}
+	if(item.favorite[1] == "Yes"){
+	    ge('fav').setAttribute("checked", "checked");
+	}
+	// Remove the initial listener from the input 'save List' (saveIt) button
+	saveIt.removeEventListener("click", storeData );
+	// Change Save It Now button value to Edit button.
+	ge('submit').value = "Edit List";
+	var editSubmit = ge('submit');
+	// Save the key value established in this function as a property of the editSubmit event
+	// so we can use that value when we save the data we edited.
+	editSubmit.addEventListener("click", validate);
+	editSubmit.key = this.key;
+    };
+
 
 var clearLocal = function(){
-   localStorage.clear === 0){
+   if(localStorage.length === 0){
             alert("There is no data to clear.")
         }else{
             localStorage.clear();
