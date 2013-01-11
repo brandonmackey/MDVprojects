@@ -42,7 +42,7 @@ Gold App
                 
             <!-- MAKE A LIST BUTTON ON FRONT PAGE -->
             <!-- <p><a href="additem.html" data-ajax="false" data-role="button" data-icon="arrow-r" data-theme="a" data-iconpos="right">Make A List</a></p> -->
-		    <p><a href="#additem" data-role="button" data-icon="arrow-r" data-theme="a" data-iconpos="right">Make A List</a></p>
+		    <p><a href="#additem" id="homeButton" data-role="button" data-icon="arrow-r" data-theme="a" data-iconpos="right">Make A List</a></p>
             <!-- BROWSE ON FRONT PAGE  and SEARCH FILTER-->
                 <ul data-role="listview" data-inset="true" data-filter="true">
                     <li data-role="list-divider">Browse Lists</li>
@@ -103,7 +103,7 @@ Gold App
 		
 		<form action="" method="post" id="additemform">
 		    
-		    <div data-role="fieldcontain">
+		    <div data-role="fieldcontain" id="listButton">
 			<label for="To Do List" class="select" >List Type </label>
 			<select name="groups" id="groups" class="required">
 			   <option value="">Choose a List</option>
@@ -145,8 +145,8 @@ Gold App
 		    </div>
 		    
 		    <div data-role="fieldcontain">
-			<label for="notes" id="notes">Notes <br/></label>
-			<textarea></textarea>
+			<label for="notes">Notes <br/></label>
+			<textarea id="notes"></textarea>
 		    </div>
 		    
 		    <div data-role="fieldcontain">
@@ -172,7 +172,7 @@ Gold App
 	  
 	</div>
 	
-<!-- THIS IS WERE THE ERRORS PAGE STARTS -->
+<!-- THIS IS WERE THE ERRORS PAGE STARTS ----  When you don't complete the form-->
 	<div data-role="dialog" id="errors">
             
 	    <div data-role="header" data-position="fixed">
@@ -197,7 +197,11 @@ Gold App
 		<!-- Branding Image -->
 		<a href="#home"><img src= "../Mackey_Brandon_project1/image/brand_gld.png" id="branding" alt="brand" width="200" height="80"></a>
 		<div id="items">
-		    <a href="#" id="deleteItem">Delete List</a>  
+		    <a href="#" id="deleteItem">Delete List</a> 
+		</div>
+		<br/>
+		<div id="items">
+		    <a href="#" id="editItem">Edit List</a>  
 		</div>
 	    </div>
 	    
@@ -281,6 +285,7 @@ Gold App
         <!-- JavaScript under here -->
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	
 	<!-- PUT DATA VALIDAOR HERE-->
 	
 	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>

@@ -33,10 +33,8 @@ $('#additem').on('pageinit', function(){
 $('#displayPage').on('pageinit', function(){
 	getData();
 	$('#deleteItem').on("click", deleteItem);
-	
-	
+	$('#editItem').on("click", editItem);
 });
-
 
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
@@ -49,42 +47,33 @@ var autoFillData = function (){
 	    localStorage.setItem(id, JSON.stringify(json[n]));
 	}
 };
-
+//console.log("fire ok");
 var getData = function(){
    if(localStorage.length === 0){
-           //alert("There is no data in Local Storage so default data was added.");
-	   // autoFillData();
-	    // -- Comment Out Reload Page when using Test JSON Data Uncommit when not testing!! --
-            //window.location.reload();
-        //}
-        //if ($("#items")){
-	   // $("#items").innerHTML="";
+           
 	} else {
 	var makeDiv = document.createElement('div');
-        makeDiv.setAttribute("id", "listItem");
-	//makeDiv.setAttribute("data-role", "listview");
+        $(makeDiv).attr("id", "listItem");
         var makeList = document.createElement('ul');
-        makeDiv.appendChild(makeList);
-        //document.body.appendChild(makeDiv);
+        $(makeDiv).append(makeList);
 	$('#items').append(makeDiv);
-        //$('#items').style.display = "block";
         for (var i=0, len=localStorage.length; i<len; i++){
             var makeLi = document.createElement('Li');
 	    var linksLi =document.createElement('li');
-            makeList.appendChild(makeLi);
+            $(makeList).append(makeLi);
             var key =localStorage.key(i);
             var value = localStorage.getItem(key);
             // convert the string from local storage value back to an object by JSON.parse  
             var obj = JSON.parse(value);
             var makeSubList = document.createElement('ul');
-            makeLi.appendChild(makeSubList);
+            $(makeLi).append(makeSubList);
             //getImage(obj.group[1], makeSubList);
 	    for (var n in obj){
                 var makeSubLi = document.createElement('li');
-                makeSubList.appendChild(makeSubLi);
+                $(makeSubList).append(makeSubLi);
                 var optSubText = obj[n] [0]+""+obj [n][1];
-                makeSubLi.innerHTML = optSubText;
-		makeSubList.appendChild(linksLi);
+                $(makeSubLi).html(optSubText);
+		$(makeSubList).append(linksLi);
             }
 	    //makeItemLinks(localStorage.key(i), linksLi); // create edit and delete buttons/link for each item in local storage.
 	}
@@ -132,39 +121,23 @@ var	deleteItem = function (){
     
 };
 
-function editItem(){
+var editItem = function(data){
 	// grab the data from local storage.
 	var value = localStorage.getItem(this.key);
 	var item = JSON.parse(value);
 	console.log(value);
-	
-	// populate the form fields with current localStorage values.
-	ge('groups').value = item.group[1];
-	var radios = document.forms[0].importance;
-	for(var i=0; i<radios.length; i++){
-	    if(radios[i].value =="High Priority" && item.importance[1] == "High Priority"){
-		radios[i].setAttribute("checked", "checked");
-	    }else if(radios[i].value == "Low Priority" && item.importance[1] == "Low Priority"){
-		radios[i].setAttribute("checked", "checked");
-	    }
-	ge('date').value = item.date[1];
-	ge('range').value = item.quantity[1];
-	ge('what').value = item.what[1];
-	ge('where').value = item.where[1];
-	ge('notes').value = item.notes[1];
+	$.mobile.changePage( "#displayPage");
+	$('#date').val('date'[1]);
+	$('#range').val('range'[1]);
+	$('#what').val('what'[1]);
+	$('#where').val('where'[1]);
+	$('#notes').val('notes'[1]);
+	//}
+	if('favorite'[1] == "Yes"){
+	    $('#fav').attr("checked", "checked");
+	    
 	}
-	if(item.favorite[1] == "Yes"){
-	    ge('fav').setAttribute("checked", "checked");
-	}
-	// Remove the initial listener from the input 'save List' (saveIt) button
-	saveIt.removeEventListener("click", storeData );
-	// Change Save It Now button value to Edit button.
-	ge('submit').value = "Edit List";
-	var editSubmit = ge('submit');
-	// Save the key value established in this function as a property of the editSubmit event
-	// so we can use that value when we save the data we edited.
-	editSubmit.addEventListener("click", validate);
-	editSubmit.key = this.key;
+	console.log("fire ok");
     };
 
 
