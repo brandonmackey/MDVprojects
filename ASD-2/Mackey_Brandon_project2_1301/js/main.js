@@ -46,10 +46,12 @@ $('#ajax').on('pageinit', function(){
 	    dataType: 'json',
 	    success: function(r){
 		console.log(r);
+		$('#viewData').empty();
 		// your page building code will go here
 		for (var n in r){
 		    var list = r[n]
-		    $('<li>' + '<h3>' + n + '</h3>' +
+		    $(
+			'<li>' + '<h3>' + n + '</h3>' +
 		        '<p>' + 'Type: ' + list['group'][1] +'</p>' +
 			'<p>' + 'Importance: ' + list['importance'][1] +'</p>' +
 			'<p>' + 'Date: ' + list['date'][1] +'</p>' +
@@ -67,29 +69,31 @@ $('#ajax').on('pageinit', function(){
 	});
 	return false;
     });
-    $('#xml').on('click', function(){
+    $('#xml').on('click', function(){ 
 	console.log("Display xml");
 	$.ajax({
 	    url: 'xhr/data.xml',
 	    type: 'GET',
 	    dataType: 'xml',
 	    success: function(r){
+		$('#viewData').empty();
 		console.log(r);
 		// your page building code will go here
 		var items = $(r);
 		items.find("list").each(function(){
 		    var item = $(this);
-			$('<li>' + '<h3>' + item.find("group").text() + '</h3>' +
-			'<p>' + 'Importance: ' + item.find("importance").text() +'</p>' +
-			'<p>' + 'Date: ' + item.find("date").text() +'</p>' +
-			'<p>' + 'Quantity: ' + item.find("quantity").text() +'</p>' +
-			'<p>' + 'What: ' + item.find("what").text() +'</p>' +
-			'<p>' + 'Where: ' + item.find("where").text() +'</p>' +
-			'<p>' + 'Notes: ' + item.find("notes").text() +'</p>' +
-			'<p>' + 'Favorite: ' + item.find("favorite").text() +'</p>' +
-			'</li>' 
+			$(  
+			    '<li>' + '<h3>' + item.find("group").text() + '</h3>' +
+			    '<p>' + 'Importance: ' + item.find("importance").text() +'</p>' +
+			    '<p>' + 'Date: ' + item.find("date").text() +'</p>' +
+			    '<p>' + 'Quantity: ' + item.find("quantity").text() +'</p>' +
+			    '<p>' + 'What: ' + item.find("what").text() +'</p>' +
+			    '<p>' + 'Where: ' + item.find("where").text() +'</p>' +
+			    '<p>' + 'Notes: ' + item.find("notes").text() +'</p>' +
+			    '<p>' + 'Favorite: ' + item.find("favorite").text() +'</p>' +
+			    '</li>' 
 		      
-		      ).appendTo('#viewData');
+			).appendTo('#viewData');
 		});
 		$('#viewData').listview('refresh');
 	    }
@@ -103,8 +107,10 @@ $('#ajax').on('pageinit', function(){
 	    type: 'GET',
 	    dataType: 'text',
 	    success: function(r){
+		$('#viewData').empty();
 		console.log(r);
 		// your page building code will go here
+		
 	    }
 	});
 	return false;
@@ -196,7 +202,7 @@ var	deleteItem = function (){
     
 };
 
-var editItem = function(data){
+var editItem = function(){
 	// grab the data from local storage.
 	var value = localStorage.getItem(this.key);
 	var item = JSON.parse(value);
