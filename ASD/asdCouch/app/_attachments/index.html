@@ -22,7 +22,8 @@ Gold App
 	<meta http-equiv="cleartype" content="on">
 	
 	<!-- StyleSheets under here -->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+	<!-- THIS IS WERE MY COLOR SCHEME IS -->
 	<link rel="stylesheet" href="custom.min.css" />
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="modernizr.custom.min.js"></script> 
@@ -37,7 +38,7 @@ Gold App
             <!-- CONTENT OF THE PAGE -->
             <div data-role="content" data-theme="a">
                 <!-- CTA IMAGE FOR FRONT PAGE -->
-                <img src= "image/ListCTA.png" alt="CTA" width="304" height="228">
+                <img src= "ListCTA.png" alt="CTA" width="304" height="228">
                 
             <!-- MAKE A LIST BUTTON ON FRONT PAGE -->
             <!-- <p><a href="additem.html" data-ajax="false" data-role="button" data-icon="arrow-r" data-theme="a" data-iconpos="right">Make A List</a></p> -->
@@ -47,14 +48,14 @@ Gold App
                     <li data-role="list-divider">Browse Lists</li>
                     <li>
                         <a href="#error">
-			    <img src="image/Grocery_List.png"/>
+			    <img src="Grocery_List.png"/>
                             <h3>Grocery List</h3>
                         </a>
                     </li>
                     
                     <li>
                         <a href="#error">
-			    <img src="image/Don't_Forget!.png"/>
+			    <img src="Don't_Forget!.png"/>
                             <h3>Don't Forget!</h3>
                         </a>
                     </li>
@@ -62,7 +63,7 @@ Gold App
                     
                     <li>
                         <a href="#error">
-			    <img src="image/Wish_List.png"/>
+			    <img src="Wish_List.png"/>
                             <h3>Wish List</h3>
                         </a>
                     </li>
@@ -70,7 +71,7 @@ Gold App
                     
                     <li>
                         <a href="#error">
-			    <img src="image/Honey_Do_List!.png"/>
+			    <img src="Honey_Do_List!.png"/>
                             <h3>Honey Do List!</h3>
                         </a>
                     </li>
@@ -99,7 +100,7 @@ Gold App
 	    
 	    <div data-role="content" data-theme="a">
 		
-		<a href="#home"><img src= "image/brand_gld.png" id="branding" alt="brand" width="200" height="80"></a>
+		<a href="#home"><img src= "brand_gld.png" id="branding" alt="brand" width="200" height="80"></a>
 		
 		<form action="" method="post" id="additemform">
 		    
@@ -165,7 +166,7 @@ Gold App
 			<a href="#displayPage" id="displayLink">Display Lists</a>
 		    </div>
 		    
-		    <a href="#errors" id="errorsLink" data-rel="dialog" data-transition="pop">Open Errors</a> 
+		    <!-- <a href="#errors" id="errorsLink" data-rel="dialog" data-transition="pop">Open Errors</a> -->
 		    
 		</form>
 	    </div>
@@ -195,10 +196,11 @@ Gold App
             </div>
 	    <div data-role="content" data-theme="a">
 		<!-- Branding Image -->
-		<a href="#home"><img src= "image/brand_gld.png" id="branding" alt="brand" width="200" height="80"></a>
+		<a href="#home"><img src= "brand_gld.png" id="branding" alt="brand" width="200" height="80"></a>
 		<div id="items">
-		    <a href="#" id="deleteItem">Delete List</a>  
+		    <a href="#" id="deleteItem">Delete List</a>
 		</div>
+		
 	    </div>
 	    
 	</div>
@@ -212,7 +214,7 @@ Gold App
             <div data-role="content" data-theme="a">
 		
 		<!-- Branding Image -->
-		<a href="#home"><img src= "image/brand_gld.png" id="branding" alt="brand" width="200" height="80"></a>
+		<a href="#home"><img src= "brand_gld.png" id="branding" alt="brand" width="200" height="80"></a>
 		
 		<!-- GITHUB LINK -->
 		<li><a href="https://github.com/brandonmackey/MDVprojects/tree/gh-pages/ASD">Github Link</a></li>
@@ -239,7 +241,7 @@ Gold App
             </div>
 	<!-- CONTENT OF THE PAGE -->
             <div data-role="content" data-theme="a">
-		<a href="#home"><img src= "image/brand_gld.png" id="branding" alt="brand" width="200" height="80"></a>
+		<a href="#home"><img src= "brand_gld.png" id="branding" alt="brand" width="200" height="80"></a>
 		<p>Gold Edn: Thank you for your purchase</p>
 		<p>Creator: Brandon Mackey</p>
 		<p>Designer: Brandon Mackey</p>		
@@ -272,7 +274,7 @@ Gold App
 		<h2>404 Error:</h2>
 		<p>Something has happened? </p>
 		<p>HURRY GO BACK!</p>
-		<img src="image/grenade.png">
+		<img src="grenade.png">
 		
 	    </div>
 
@@ -290,9 +292,11 @@ Gold App
 		<div data-role="content" id="dataDisplayMain">
 		    <div data-role="controlgroup" data-type="horizontal" id="dataButtons">
 			
-		    </div>
 		    <ul data-role="listview" data-inset="true" id="viewData"></ul>
+			
 		    </div>
+		    
+		</div>
 	    </div>
 	    
 	<!-- THIS IS THE FOOTER -->

@@ -48,65 +48,69 @@ var autoFillData = function (){
 };
 
 
-var getData = function(){
-   if(localStorage.length === 0){
-           //alert("There is no data in Local Storage so default data was added.");
-	   // autoFillData();
-	    // -- Comment Out Reload Page when using Test JSON Data Uncommit when not testing!! --
-            //window.location.reload();
+
+var getData = function () {
+/*   if (localStorage.length === 0) {
+        //alert("There is no data in Local Storage so default data was added.");
+        // autoFillData();
+        // -- Comment Out Reload Page when using Test JSON Data Uncommit when not testing!! --
+        //window.location.reload();
         //}
         //if ($("#items")){
-	   // $("#items").innerHTML="";
-	} else {
-	var makeDiv = document.createElement('div');
+        // $("#items").innerHTML="";
+    } else {
+        var makeDiv = document.createElement('div');
         makeDiv.setAttribute("id", "listItem");
-	//makeDiv.setAttribute("data-role", "listview");
+        //makeDiv.setAttribute("data-role", "listview");
         var makeList = document.createElement('ul');
         makeDiv.appendChild(makeList);
         //document.body.appendChild(makeDiv);
-	$('#items').append(makeDiv);
+        $('#items').append(makeDiv);
         //$('#items').style.display = "block";
-        for (var i=0, len=localStorage.length; i<len; i++){
+        for (var i = 0, len = localStorage.length; i < len; i++) {
             var makeLi = document.createElement('Li');
-	    var linksLi =document.createElement('li');
+            var linksLi = document.createElement('li');
             makeList.appendChild(makeLi);
-            var key =localStorage.key(i);
+            var key = localStorage.key(i);
             var value = localStorage.getItem(key);
             // convert the string from local storage value back to an object by JSON.parse  
             var obj = JSON.parse(value);
             var makeSubList = document.createElement('ul');
             makeLi.appendChild(makeSubList);
             //getImage(obj.group[1], makeSubList);
-	    for (var n in obj){
+            for (var n in obj) {
                 var makeSubLi = document.createElement('li');
                 makeSubList.appendChild(makeSubLi);
-                var optSubText = obj[n] [0]+""+obj [n][1];
+                var optSubText = obj[n][0] + "" + obj[n][1];
                 makeSubLi.innerHTML = optSubText;
-		makeSubList.appendChild(linksLi);
+                makeSubList.appendChild(linksLi);
             }
-	    //makeItemLinks(localStorage.key(i), linksLi); // create edit and delete buttons/link for each item in local storage.
-	}
-	}
-    };
+            //makeItemLinks(localStorage.key(i), linksLi); // create edit and delete buttons/link for each item in local storage.
+        }
+	}*/
+    $.ajax({
+        "url": '_view/tasks',
+	"type": 'GET',
+        "dataType": "json",
+        "success": function (data) {
+	    console.log(data);
+            $.each(data.rows, function (index, tasks) {
+                var type = tasks.value.Type;
+                var priority = tasks.value.Priority;
+		var date = tasks.value.Date;
+		var quantity = tasks.value.Quantity;
+                $('#displayPage').append(
+		    $('<li>').append(
+			$('<a>').attr("href", "#")
+			    .text(type)));
+	    });
+            $('displayPage').listview('refresh');
+        }
+    })
 
+};
 
-$.ajax({
-    "url":'1list',
-    "dataType": "json",
-    "success": function(data){
-	$.each(data.rows, function(index, json){
-	    var type = json.doc.type;
-	    var priority = json.doc.priority;
-	    $('#ajax').append.(
-		$('<li>').append(
-		    $('<a>').attr("href", "#")
-		    	.text(title)
-		)
-    	    );
-    	});
-    	$('ajax').listview('refresh');
-    }
-}); 
+ 
 
 var storeData = function(data){
     if(!data.key){
