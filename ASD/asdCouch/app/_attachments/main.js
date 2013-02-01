@@ -4,9 +4,7 @@ $('#home').on('pageinit', function(){
 
 $('#additem').on('pageinit', function(){
     delete $.validator.methods.date;
-    var myForm = $('#additemform'),
-	errorsLink = $('#errorsLink')
-    ; 
+    var myForm = $('#additemform'); 
     myForm.validate({
 	invalidHandler: function(form, validator) {
 	    errorsLink.click();
@@ -27,13 +25,15 @@ $('#additem').on('pageinit', function(){
 	
 	//any other code needed for addItem page goes here
 	$('#clear').on("click", clearLocal);
+	
 });
 
 
 $('#displayPage').on('pageinit', function(){
 	getData();
 	$('#deleteItem').on("click", deleteItem);
-	
+	$('#editItem').on("click", editItem);
+	//$('#editSubmit').on("click", editItem);
 });
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
@@ -48,27 +48,23 @@ var autoFillData = function (){
 };
 
 
-
 var getData = function () {
-/*   if (localStorage.length === 0) {
-        //alert("There is no data in Local Storage so default data was added.");
-        // autoFillData();
+   if (localStorage.length === 0) {
+        //alert("There is no data in Local Storage.");
+        //autoFillData();
         // -- Comment Out Reload Page when using Test JSON Data Uncommit when not testing!! --
         //window.location.reload();
         //}
         //if ($("#items")){
-        // $("#items").innerHTML="";
+        //$("#items").innerHTML="";
     } else {
         var makeDiv = document.createElement('div');
         makeDiv.setAttribute("id", "listItem");
-        //makeDiv.setAttribute("data-role", "listview");
-        var makeList = document.createElement('ul');
+	var makeList = document.createElement('ul');
         makeDiv.appendChild(makeList);
-        //document.body.appendChild(makeDiv);
         $('#items').append(makeDiv);
-        //$('#items').style.display = "block";
         for (var i = 0, len = localStorage.length; i < len; i++) {
-            var makeLi = document.createElement('Li');
+	    var makeLi = document.createElement('li');
             var linksLi = document.createElement('li');
             makeList.appendChild(makeLi);
             var key = localStorage.key(i);
@@ -76,6 +72,18 @@ var getData = function () {
             // convert the string from local storage value back to an object by JSON.parse  
             var obj = JSON.parse(value);
             var makeSubList = document.createElement('ul');
+	    var editLink = $('<button>');
+		editLink.attr("key", key);
+	    var editButton = "Edit List";
+	    var deleteLink = $("<button>");
+		deleteLink.attr("key", key);
+	    var deleteButton = "Delete";
+	    editLink.attr("href", "#addItem");
+	    deleteLink.attr("href", "#displayPage");
+	    editLink.text(editButton);
+	    deleteLink.text(deleteButton);
+	    editLink.appendTo(linksLi);
+	    deleteLink.appendTo(linksLi);
             makeLi.appendChild(makeSubList);
             //getImage(obj.group[1], makeSubList);
             for (var n in obj) {
@@ -86,8 +94,10 @@ var getData = function () {
                 makeSubList.appendChild(linksLi);
             }
             //makeItemLinks(localStorage.key(i), linksLi); // create edit and delete buttons/link for each item in local storage.
+	    editLink.on("click", editItem);
+	    deleteLink.on("click", deleteItem);	
         }
-	}*/
+    }
     $.ajax({
         "url": '_view/tasks',
 	"type": 'GET',
@@ -110,12 +120,15 @@ var getData = function () {
 
 };
 
+
+// ** CSS **
+$('#displayLink').css('margin-left','100px');
  
 
 var storeData = function(data){
     if(!data.key){
 	    // key number for your object (random #) 
-	    var id              = Math.floor(Math.random()*10000001);
+	    var id = Math.floor(Math.random()*10000001);
 	}else{
 	    // Set the id to the existing key we're editing so that will save over the data.
 	    // The key is the sam ekey that's been passed alond from the editSubmit event handler
@@ -135,12 +148,13 @@ var storeData = function(data){
             item.favorite   =["Favorite:", $('#fav').val()];
         localStorage.setItem(id, JSON.stringify(item));
         alert("Your List has been Saved!");
-        location.reload();
+	location.reload();
     };
 
 
 var	deleteItem = function (){
-	ask = confirm("Are you sure you want to delete this List?");
+	console.log("deleteItem called");
+	ask = confirm("Are you sure you want to Delete this List?");
 	if(ask){
 	    // .remove will not delete the list So .clear was inserted
 	    localStorage.clear(this.key);
@@ -151,6 +165,85 @@ var	deleteItem = function (){
 	}
     
 };
+
+// ** CSS **
+$('#deleteItem').css('margin-left','200px');
+
+/*var editItem = function(){
+	// grab the data from local storage.
+	var value = localStorage.getItem(this.key);
+	var item = JSON.parse(value);
+	var radios = document.forms[0].importance;
+	$('#groups').val();
+	$('#date').val(item.date[1]);
+	$('#range').val();
+	$('#what').val();
+	$('#where').val();
+	$('#notes').val();
+	$('#fav').val();
+	/*for(var i=0; i<radios.length; i++){
+	    if(radios[i].value =="High Priority" && item.importance[1] == "High Priority"){
+		radios[i].setAttribute("checked", "checked");
+	    }else if(radios[i].value == "Low Priority" && item.importance[1] == "Low Priority"){
+		radios[i].setAttribute("checked", "checked");
+	    }*//*
+	$.mobile.changePage("#displayPage");
+	localStorage.removeItem(this.key);
+	$('submit').val = "Edit List";
+	var editSubmit = $('submit');
+	
+	editSubmit.key = this.key;
+	//}
+};*/
+
+
+    
+var editItem = function(){
+	console.log("editItem called");
+	// grab the data from local storage.
+	var value = localStorage.getItem(this.key);
+	var item = JSON.parse(value);
+	
+	// show the form
+	
+	// populate the form fields with current localStorage values.
+	$('#groups').val = [1];
+	$('input:radio[name=importance]:checked').val();
+	var radios = document.forms[0].importance;
+	for(var i=0; i<radios.length; i++){
+	    if(radios[i].val =="High Priority" && item.importance[1] == "High Priority"){
+		radios[i].attr("checked", "checked");
+	    }else if(radios[i].val == "Low Priority" && item.importance[1] == "Low Priority"){
+		radios[i].attr("checked", "checked");
+	    }
+	$('#date').val = (date[1]);
+	$('#range').val = (range[1]);
+	$('#what').val = (what[1]);
+	$('#where').val = (where[1]);
+	$('#notes').val = (notes[1]);
+	}
+	if(fav[1] == "Yes"){
+	    $('#fav').setAttribute("checked", "checked");
+	}
+	$.mobile.changePage("#addItem");
+	localStorage.removeItem(this.key);
+	// Remove the initial listener from the input 'save List' (saveIt) button
+	var saveIt = $('submit');
+	$('#saveIt').unbind("click", storeData );
+	// Change Save It Now button value to Edit button.
+	$('#submit').val = "Edit List";
+	var editSubmit = $('#submit');
+	// Save the key value established in this function as a property of the editSubmit event
+	// so we can use that value when we save the data we edited.
+	$('editSubmit').on("click", editItem);
+	editSubmit.key = this.key;
+    }
+
+
+
+
+
+
 
 
 var clearLocal = function(){

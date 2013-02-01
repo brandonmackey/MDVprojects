@@ -1,10 +1,10 @@
 {
   "env": {
     "local": {
-      "db": "http://127.0.0.1:5984/asdwk3"
+      "db": "http://127.0.0.1:5984/asdwk4"
     },
     "cloudant": {
-      "db": "https://brandonmackey:bmmmdvprojects@brandonmackey.cloudant.com/asdwk3"
+      "db": "https://brandonmackey:bmmmdvprojects@brandonmackey.cloudant.com/asdwk4"
     }
     
   }
