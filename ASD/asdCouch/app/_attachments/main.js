@@ -32,8 +32,9 @@ $('#additem').on('pageinit', function(){
 $('#displayPage').on('pageinit', function(){
 	getData();
 	$('#deleteItem').on("click", deleteItem);
+	$('#deleteAll').on("click", deleteAll);
 	$('#editItem').on("click", editItem);
-	//$('#editSubmit').on("click", editItem);
+	
 });
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
@@ -78,7 +79,7 @@ var getData = function () {
 	    var deleteLink = $("<button>");
 		deleteLink.attr("key", key);
 	    var deleteButton = "Delete";
-	    editLink.attr("href", "#addItem");
+	    editLink.attr("href", "#additem");
 	    deleteLink.attr("href", "#displayPage");
 	    editLink.text(editButton);
 	    deleteLink.text(deleteButton);
@@ -116,7 +117,7 @@ var getData = function () {
 	    });
             $('displayPage').listview('refresh');
         }
-    })
+    });
 
 };
 
@@ -152,9 +153,23 @@ var storeData = function(data){
     };
 
 
-var	deleteItem = function (){
+var	deleteItem = function (key){
 	console.log("deleteItem called");
 	ask = confirm("Are you sure you want to Delete this List?");
+	if(ask){
+	    // .remove will not delete the list So .clear was inserted
+	    localStorage.removeItem($(this).attr("key"));
+	    alert("List was deleted!");
+	    window.location.reload();
+	}else{
+	    alert("List was NOT deleted.");
+	}
+    
+};
+
+var	deleteAll = function (){
+	console.log("deleteALL called");
+	ask = confirm("Are you sure you want to Delete All Lists?");
 	if(ask){
 	    // .remove will not delete the list So .clear was inserted
 	    localStorage.clear(this.key);
@@ -167,47 +182,19 @@ var	deleteItem = function (){
 };
 
 // ** CSS **
-$('#deleteItem').css('margin-left','200px');
-
-/*var editItem = function(){
-	// grab the data from local storage.
-	var value = localStorage.getItem(this.key);
-	var item = JSON.parse(value);
-	var radios = document.forms[0].importance;
-	$('#groups').val();
-	$('#date').val(item.date[1]);
-	$('#range').val();
-	$('#what').val();
-	$('#where').val();
-	$('#notes').val();
-	$('#fav').val();
-	/*for(var i=0; i<radios.length; i++){
-	    if(radios[i].value =="High Priority" && item.importance[1] == "High Priority"){
-		radios[i].setAttribute("checked", "checked");
-	    }else if(radios[i].value == "Low Priority" && item.importance[1] == "Low Priority"){
-		radios[i].setAttribute("checked", "checked");
-	    }*//*
-	$.mobile.changePage("#displayPage");
-	localStorage.removeItem(this.key);
-	$('submit').val = "Edit List";
-	var editSubmit = $('submit');
-	
-	editSubmit.key = this.key;
-	//}
-};*/
-
+$('#deleteAll').css('margin-left','200px');
 
     
-var editItem = function(){
+var editItem = function(key){
 	console.log("editItem called");
 	// grab the data from local storage.
-	var value = localStorage.getItem(this.key);
-	var item = JSON.parse(value);
-	
+	var value = localStorage.getItem($(this).attr("key"));
+	var item = $.parseJSON(value);
+	console.log(item);
 	// show the form
 	
 	// populate the form fields with current localStorage values.
-	$('#groups').val = [1];
+	$('#groups').val = (item.group[1]);
 	$('input:radio[name=importance]:checked').val();
 	var radios = document.forms[0].importance;
 	for(var i=0; i<radios.length; i++){
@@ -216,16 +203,16 @@ var editItem = function(){
 	    }else if(radios[i].val == "Low Priority" && item.importance[1] == "Low Priority"){
 		radios[i].attr("checked", "checked");
 	    }
-	$('#date').val = (date[1]);
-	$('#range').val = (range[1]);
-	$('#what').val = (what[1]);
-	$('#where').val = (where[1]);
-	$('#notes').val = (notes[1]);
+	$('#date').val = (item.date[1]);
+	$('#range').val = (item.range[1]);
+	$('#what').val = (item.what[1]);
+	$('#where').val = (item.where[1]);
+	$('#notes').val = (item.notes[1]);
 	}
 	if(fav[1] == "Yes"){
-	    $('#fav').setAttribute("checked", "checked");
+	    $('#fav').attr("checked", "checked");
 	}
-	$.mobile.changePage("#addItem");
+	$.mobile.changePage("#additem");
 	localStorage.removeItem(this.key);
 	// Remove the initial listener from the input 'save List' (saveIt) button
 	var saveIt = $('submit');
@@ -237,7 +224,7 @@ var editItem = function(){
 	// so we can use that value when we save the data we edited.
 	$('editSubmit').on("click", editItem);
 	editSubmit.key = this.key;
-    }
+    };
 
 
 
@@ -248,7 +235,7 @@ var editItem = function(){
 
 var clearLocal = function(){
    if(localStorage.length === 0){
-            alert("There is no data to clear.")
+            alert("There is no data to clear.");
         }else{
             localStorage.clear();
             alert("All Lists are deleted!");
