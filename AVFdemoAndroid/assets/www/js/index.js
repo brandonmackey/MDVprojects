@@ -1,21 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -47,3 +30,35 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+$('#home').on('pageinit', function(){
+
+});
+
+
+    // ------  Twitter DATA  -------//
+var getData = function() {
+	$.getJSON('http://search.twitter.com/search.json?q=samsung&mobile=15include_entities=true&callback=?',
+            function(data) {
+            console.log(data);
+            for (i=0, j=data.results.length; i<j; i++) {
+            $("#tweets")
+            .append(
+                    "<li>" +
+                     "<img src='" +
+                     data.results[i].profile_image_url + "' />" +
+                     "<h1>" +
+                     data.results[i].from_user_name +
+                     "<br />" +
+                     "<br />" +
+                     "<p>" +
+                     data.results[i].text
+                      );
+            }
+            $("#tweets").listview("refresh");
+            });
+    };
+
+$('#getData').on('click', function() {
+    getData();
+});
