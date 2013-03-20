@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <html>
     <head>
         <title>AVF iOS Demo App :: Brandon Mackey :: AVF 1303</title>       
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Page-Enter" content="revealTrans(Duration=2.0,Transition=9)">
         
         <!-- StyleSheets under here -->
@@ -16,13 +16,24 @@
     </head>
     <body>
         <!-- #### HOME PAGE HERE! #### -->
-        <div data-role="page" id="home" data-theme="a">
+        <div data-role="page" id="home" data-theme="a" >
             <div data-role="header" data-theme="b">
                 <h1>AVF iOS Demo App  1303: Brandon Mackey</h1>
             </div>
-            <h3> Research Topics</h3>
-                <a href="#topics" data-rel="dialog"> <p>Week One</p> </a>
-            <h2>iOS / Android Native Features</h2>
+                
+            <!-- #### RESEARCH BUTTON #### -->    
+            <a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" data-transition="fade" data-icon="search" data-theme="b">Research Topics</a>
+            <div data-role="popup" id="popupMenu" data-theme="a">
+                <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
+                    <li data-role="divider" data-theme="a">Choose a Week</li>
+                    <li><a href="#wk1Topics">Week 1</a></li>
+                    <li><a href="#wk2Topics">Week 2</a></li>
+                    <li><a href="#">Week 3 (Not available)</a></li>
+                    <li><a href="#">Week 4 (Not available)</a></li>
+                </ul>
+            </div>
+            <div>  
+                <h2>iOS / Android Native Features</h2>
                 <div>
                     <img src="image/camera_icon.png" width="42" height="42"> Camera
                 </div> 
@@ -30,61 +41,98 @@
                     <img src="image/clock_icon.png" width="42" height="42"> Clock
                 </div>    
                 <div>   
-                    <a href="#twitter" data-rel="dialog"> <img src="image/twitter_icon.png" width="42" height="42"> Twitter </a>
+                    <a href="#twitter" data-rel="dialog"> <img src="image/twitter_icon.JPG" width="42" height="42"> Twitter </a>
                 </div>    
                 <div>
                     <img src="image/weather_icon.png" width="42" height="42"> Weather
                 </div>    
                 <div>   
-                    <img src="image/geolocation_icon.png" width="42" height="42"> Geolocation
+                    <a href="#geoMap" data-rel="dialog"><img src="image/compass_icon.png" width="42" height="42"> Geolocation </a>
                 </div>
+            </div>
         </div>
         
         <!-- #### TWITTER PAGE HERE! #### -->
         <div data-rel="dialog" id="twitter" data-theme="a" data-rel="back">
             
-           <div data-role="header" data-theme="b">
+            <div data-role="header" data-theme="b">
                 <h1>Twitter Feed</h1>
             </div>
           
-            <div data-role="content" id="data" data-theme="b" data-transition="pop">
+            <section data-role="content" id="data" data-theme="b" data-transition="pop">
                 <button id="getData" data-mini="true"">Search Samsung Tweets</button>
-                <ul data-role="listview" id="tweets" data-inset="true"></ul>
-                
-            </div> 
-          
-          
-            
+                <ul data-role="listview" id="tweets" data-inset="true"></ul>   
+            </section> 
+   
         </div>
         
+        <!-- #### GEOLOCATION / MAPS PAGE HERE! #### -->
+        <div data-role="popup" id="geoMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15">
+            
+            <div data-role="header" data-theme="b">
+                <h1>Map / Geplocation</h1>
+            </div>
+            
+            <a href="#geoMap" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+
+            <iframe src="map.html" width="480" height="320" seamless></iframe>
+
+        </div>
+        
+        <!-- #### BONUS #### SPREAKER RADIO STATION #### 
+        <div data-role="page" id="radio" data-theme="a" >
+            <div data-role="header" data-theme="b">
+                <h1>Bonus Radio Station</h1>
+                <h2>The Booth Guy Show</h2>
+            </div>
+            <iframe src="http://www.spreaker.com/embed/player/standard?autoplay=false&color=0068c9&show_id=456984" style="width: 100%; height: 131px; min-width: 250px;" frameborder="0" scrolling="no"></iframe>
+        </div>-->
+                
+                
                 <!-- #### TOPICS PAGE HERE! #### -->
-        <div data-rel="dialog" id="topics" data-theme="a" data-rel="back">
+        <div data-role="page" id="wk1Topics" data-theme="a" data-add-back-btn="true" data-mini="true">
             
            <div data-role="header" data-theme="b">
                 <h1>Week One Research Topics</h1>
             </div>
           
-            <div data-role="content" id="wk1Topics" data-theme="b" data-transition="pop">
+            <div data-role="content" id="wk1Topic" data-theme="b" data-transition="pop">
                 <ul data-role="listview" id="wk1" data-inset="true"></ul>
                     <li>
                         1. I think companies like Twitter have you use there service to log in to apps so you only need one password to log in but it also gives Twitter access to use there service more. It lets them post stuff from the apps you are using and makes you spend more time with there service. 
                     </li>
+                    <br />
                     <li>
                         2. JSON-P or JSON with padding,  it provides a method to request data from a server in a different domain, something prohibited by typical web browsers because of the same origin policy.
                     </li>
+                    <br />
                     <li>
                         3. Programmableweb.com has more api's then I know what to do with but a geolocation api would be great for my What To Do? app if I am somewhere I could save a location of what to do later or like a bucket list to cross off something from that location. Also to take a picture would be nice to save with that geolocation.
                     </li>
+                    <br />
                     <li>
                         4. I want to be able to take a picture and save it in the app for my What To Do? app.  I would also like to save a geolocation for that app as well. 
                     </li>
+                    <br />
                     <li>
                         5. Problems in the past I have had is losing skills from last classes and not using them for a while and having to do lots of time researching to get back into the swing of things. Lessons learned, don't forget! Retain Everything!
                     </li>
-            </div> 
-          
-          
+            </div>     
+        </div>
+        
+        <!-- #### TOPICS PAGE HERE! #### -->
+        <div data-role="page" id="wk2Topics" data-theme="a" data-add-back-btn="true">
             
+           <div data-role="header" data-theme="b">
+                <h1>Week Two Research Topics</h1>
+            </div>
+          
+            <div data-role="content" id="wk2Topics" data-theme="b" data-transition="flip">
+                <ul data-role="listview" id="wk2" data-inset="true"></ul>
+                    <li>
+                        1. No discussion post this week. 
+                    </li>
+            </div>    
         </div>
         
         

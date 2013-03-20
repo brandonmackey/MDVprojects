@@ -23,7 +23,7 @@ body {
 
 /* -- Background image of fullsail --*/
 body{
-        background-image:url("../image/fullsail.png"); 
+       /*background-image:url("../image/fullsail.png"); */
 	background-size: 1024px 768px;
         background-repeat: no-repeat;
         background-color: #736F6E    
@@ -32,7 +32,7 @@ body{
 
 /* Portrait layout (default) */
 .app {
-    background-image: 768px 1024; 
+    background-image: 768px 1024;
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
@@ -53,6 +53,8 @@ body{
                                       /* offset horizontal: half of image width and text area width */
     }
 }
+
+/* TWITTER DATA/API BOX */ 
 .ui-dialog-contain {
 	width: 92.5%;
 	max-width: 700px;
@@ -64,10 +66,20 @@ body{
 
 li{
     font-size: 18px;
-    font-family:'HelveticaNeue', Helvetica, Arial; 
+    font-family:'HelveticaNeue', Helvetica, Arial;
 }
 
+/* Research Button */
 
+popupMenu{
+    
+}
+
+.ui-li, .ui-li.ui-field-contain{
+    overflow: hidden;
+}
+
+/* MAIN HOME PAGE */
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -96,12 +108,14 @@ p {
     margin:10px;
     overflow:visible;
     padding:0px;
-    text-align:right;   
+    /*text-align:right; */
 }
 
 div{
     margin: 20px;
 }
+
+/* ----------------- */
 
 fieldset{
     max-width: 356px;
