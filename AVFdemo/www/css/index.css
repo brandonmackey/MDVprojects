@@ -72,7 +72,7 @@ li{
 /* Research Button */
 
 popupMenu{
-    
+    display: none;
 }
 
 .ui-li, .ui-li.ui-field-contain{
