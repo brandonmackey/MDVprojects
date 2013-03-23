@@ -1,5 +1,15 @@
-/*$('#home').on('pageinit', function(){
+$('#home').on('pageinit', function(){
+
 });
+
+$('#twitter').on('click', function(){
+
+});
+
+$('#radio').on('click', function(){
+
+});
+
 
     // ------  Twitter DATA  -------//
 var getData = function() {
@@ -26,8 +36,11 @@ var getData = function() {
 
 $('#getData').on('click', function() {
     getData();
+    
 });
-    //------ MAPS / GEOLOCATION -----//
+//------------------------------------------------------------------------//
+
+//------ MAPS -----//
 
 
 $( document ).on( "pageinit", function() {
@@ -63,10 +76,11 @@ $( document ).on( "pageinit", function() {
         }
     });
 });
+//------------------------------------------------------------------//
 
     //------ CAMERA  -----//
     
-var pictureSource;   // picture source
+    var pictureSource;   // picture source
     var destinationType; // sets the format of returned value 
 
     // Wait for Cordova to connect with the device
@@ -82,9 +96,9 @@ var pictureSource;   // picture source
 
     // Called when a photo is successfully retrieved
     //
-    function onPhotoDataSuccess(imageData) {
+    var photoBase = function(imageData) {
       // Uncomment to view the base64 encoded image data
-       console.log(imageData);
+      // console.log(imageData);
 
       // Get image handle
       //
@@ -98,13 +112,13 @@ var pictureSource;   // picture source
       // The inline CSS rules are used to resize the image
       //
       smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
+    };
 
     // Called when a photo is successfully retrieved
     //
-    function onPhotoURISuccess(imageURI) {
+    var photoImage = function(imageURI) {
       // Uncomment to view the image file URI 
-       console.log(imageURI);
+      // console.log(imageURI);
 
       // Get image handle
       //
@@ -118,35 +132,116 @@ var pictureSource;   // picture source
       // The inline CSS rules are used to resize the image
       //
       largeImage.src = imageURI;
-    }
+    };
 
     // A button will call this function
     //
-    function capturePhoto() {
+    var takePicture = function() {
       // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 49,
+      navigator.camera.getPicture(photoBase, failMsg, { quality: 50,
         destinationType: destinationType.DATA_URL });
-    }
+    };
 
     // A button will call this function
     //
-    function capturePhotoEdit() {
+    var takePictureEdit = function() {
       // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+      navigator.camera.getPicture(photoBase, failMsg, { quality: 20, allowEdit: true,
         destinationType: destinationType.DATA_URL });
-    }
+    };
 
     // A button will call this function
     //
-    function getPhoto(source) {
+    var retrievePicture = function(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 49, 
-        destinationType: destinationType.FILE_URI,
+      navigator.camera.getPicture(photoImage, failMsg, { quality: 50, 
+        destinationType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
         sourceType: source });
     };
 
     // Called if something bad happens.
     // 
-    function onFail(message) {
+    var failMsg = function(message) {
       alert('Failed because: ' + message);
-    };*/
+    };
+    
+///// #### REMOVE FOR ANDROID #### ///////////////////////////////////////////////
+    setTimeout(function() { 
+    // do your thing here!
+    }, 0);
+ //-------------------------------------------------------//
+ 
+    // #### Geolocation #### //
+    
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady2, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady2() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          +                                   position.timestamp          + '<br />';
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+    };
+ 
+//---------- YOUTUBE -----------------------//   
+var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'wvA2dACgbFs',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 0);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      };
+

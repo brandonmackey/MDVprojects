@@ -14,14 +14,16 @@ body {
         color-stop(0.51, #E4E4E4)
     );
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:14px;
+    
+    /*FONT SIZE FOR ICON LINKS*/
+    font-size:18px;
     height:100%;
     margin:0px;
     padding:0px;
     width:100%;
 }
 
-/* -- Background image of fullsail --*/
+/* -- Background image of fullsail / or just plain background color --*/
 body{
        /*background-image:url("../image/fullsail.png"); */
 	background-size: 1024px 768px;
@@ -69,14 +71,15 @@ li{
     font-family:'HelveticaNeue', Helvetica, Arial;
 }
 
-/* Research Button */
+/* twitter Search Button */
 
-popupMenu{
-    display: none;
+#data{
+    text-align: center;
 }
 
-.ui-li, .ui-li.ui-field-contain{
-    overflow: hidden;
+/* Map */
+#map{
+    text-align: center;
 }
 
 /* MAIN HOME PAGE */
@@ -93,14 +96,33 @@ h2 {
     margin:30px;
     overflow:visible;
     padding:0px;
-    text-align:left;   
+    text-align:left;
+    font-size: 26px;
 }
 
 h3 {
-    margin:20px;
+    margin:10px;
     overflow:visible;
-    padding-top: 50px;
-    text-align:right;   
+    padding-top: 0px;
+    text-align:center;   
+}
+
+/* Research Button */
+h4{
+    text-align: right;
+}
+.ui-li, .ui-li.ui-field-contain{
+    overflow: hidden;
+}
+
+/*-- BONUS RADIO TEXT--*/
+.ui-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#player{
+    margin: 75px;
 }
 
 p {
@@ -141,19 +163,3 @@ fieldset{
     display:none;
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
