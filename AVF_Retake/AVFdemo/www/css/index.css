@@ -1,0 +1,169 @@
+/* iOS */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+   -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+   -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    
+    /*FONT SIZE FOR ICON LINKS*/
+    font-size:18px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/* -- Background image of fullsail / or just plain background color --*/
+body{
+       /*background-image:url("../image/fullsail.png"); */
+	background-size: 1024px 768px;
+        background-repeat: no-repeat;
+        background-color: #736F6E    
+}
+
+
+/* Portrait layout (default) */
+.app {
+    background-image: 768px 1024;
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+/* TWITTER DATA/API BOX */ 
+.ui-dialog-contain {
+	width: 92.5%;
+	max-width: 700px;
+	margin: 10% auto 15px auto;
+	padding: 0;
+	position: relative;
+	top: -15px;
+}
+
+#twitterSearch{
+    
+}
+
+li{
+    font-size: 18px;
+    font-family:'HelveticaNeue', Helvetica, Arial;
+}
+
+/* twitter Search Button */
+
+#data{
+    text-align: center;
+}
+
+/* Map */
+#map{
+    text-align: center;
+}
+
+/* MAIN HOME PAGE */
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+h2 {
+    margin:30px;
+    overflow:visible;
+    padding:0px;
+    text-align:left;
+    font-size: 26px;
+}
+
+h3 {
+    margin:10px;
+    overflow:visible;
+    padding-top: 0px;
+    text-align:center;   
+}
+
+/* Research Button */
+h4{
+    text-align: right;
+}
+.ui-li, .ui-li.ui-field-contain{
+    overflow: hidden;
+}
+
+/*-- BONUS RADIO TEXT--*/
+.ui-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#player{
+    margin: 75px;
+}
+
+p {
+    font-size: 14px;
+    margin:10px;
+    overflow:visible;
+    padding:0px;
+    /*text-align:right; */
+}
+
+div{
+    margin: 20px;
+}
+
+/* ----------------- */
+
+fieldset{
+    max-width: 356px;
+    max-height: 720;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
