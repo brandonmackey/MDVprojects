@@ -3,18 +3,24 @@ $('#home').on('pageinit', function(){
 
 });
 
-$('#twitter').on('click', function(){
+$('#twitter').on('pageinit', function(){
+	
+});
+
+$('#device').on('click', function(){
 
 });
 
-$('#radio').on('click', function(){
+$('#geo').on('click', function(){
 
 });
 
 
     // ------  Twitter DATA  -------//
 var getData = function() {
-	$.getJSON('http://search.twitter.com/search.json?q=samsung&galaxy=15include_entities=result_type=true&callback=?',
+	var twitterSearch = $('#twitterSearch').val();
+	alert('fire');
+	$.getJSON('http://search.twitter.com/search.json?q=' + twitterSearch + '&rpp=10&lang=en&include_entities=true&result_type=mixed&callback=?',
             function(data) {
             console.log(data);
             for (i=0, j=data.results.length; i<j; i++) {
@@ -33,12 +39,18 @@ var getData = function() {
             }
             $("#tweets").listview("refresh");
             });
-    };
-
+	};
+	
 $('#getData').on('click', function() {
-    getData();
-    
+    getData();    
 });
+
+$('#clear').on('click', function() {
+	location.reload();
+});
+
+
+    
 //------------------------------------------------------------------------//
 
 //------ MAPS -----//
@@ -179,11 +191,11 @@ $( document ).on( "pageinit", function() {
     //
     function onDeviceReady2() {
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    }
+    };
 
     // onSuccess Geolocation
     //
-    function onSuccess(position) {
+    var onSuccess = function(position) {
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
@@ -193,16 +205,46 @@ $( document ).on( "pageinit", function() {
                             'Heading: '            + position.coords.heading               + '<br />' +
                             'Speed: '              + position.coords.speed                 + '<br />' +
                             'Timestamp: '          +                                   position.timestamp          + '<br />';
-    }
+    };
 
     // onError Callback receives a PositionError object
     //
-    function onError(error) {
+    var onError = function(error) {
         alert('code: '    + error.code    + '\n' +
                 'message: ' + error.message + '\n');
     };
+
+
+//------------------------------------------------------------------------------------------------------//    
+
+//------------ Device ----------------------------------------------------// 
+
+
+var phoneName = window.device.name;
+var string = device.model;
+var name = device.name;
+var deviceID = device.uuid;
+ // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady3, false);
+
+    // Cordova is ready
+    //
+	
+    
+    function onDeviceReady3() {
+        var element = document.getElementById('deviceProperties');
+	
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+                            'Device Cordova: '  + device.cordova + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Model: '    + device.model     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+};
+//------------------------------------------------------------------------------//   
  
-//---------- YOUTUBE -----------------------//   
+/*---------- YOUTUBE -----------------------//   ## Not using youtube right now ##
 var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
@@ -242,3 +284,4 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
       function stopVideo() {
         player.stopVideo();
       };
+*/

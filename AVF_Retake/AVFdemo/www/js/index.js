@@ -5,6 +5,9 @@ $('#home').on('pageinit', function(){
 
 $('#twitter').on('pageinit', function(){
 	
+	$('#getData').on('click', function() {
+		getData();    
+	});
 });
 
 $('#device').on('click', function(){
@@ -192,11 +195,11 @@ $( document ).on( "pageinit", function() {
     //
     function onDeviceReady2() {
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    }
+    };
 
     // onSuccess Geolocation
     //
-    function onSuccess(position) {
+    var onSuccess = function(position) {
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
@@ -206,11 +209,11 @@ $( document ).on( "pageinit", function() {
                             'Heading: '            + position.coords.heading               + '<br />' +
                             'Speed: '              + position.coords.speed                 + '<br />' +
                             'Timestamp: '          + position.timestamp                    + '<br />';
-    }
+    };
 
     // onError Callback receives a PositionError object
     //
-    function onError(error) {
+    var onError = function(error) {
         alert('code: '    + error.code    + '\n' +
                 'message: ' + error.message + '\n');
     };
@@ -241,14 +244,10 @@ var deviceID = device.uuid;
                             'Device UUID: '     + device.uuid     + '<br />' + 
                             'Device Model: '    + device.model     + '<br />' + 
                             'Device Version: '  + device.version  + '<br />';
-			    console.log('fire');
-    };
-
-
-
+};
 //------------------------------------------------------------------------------//   
  
-//---------- YOUTUBE -----------------------//   
+/*---------- YOUTUBE -----------------------//   ## Not using youtube right now ##
 var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
@@ -288,4 +287,4 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
       function stopVideo() {
         player.stopVideo();
       };
-
+*/

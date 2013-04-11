@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-
+<!-- ### iOS ### -->
 <html>
     <head>
-        <title>AVF iOS Demo App :: Brandon Mackey :: AVF 1303</title>       
+        <title>AVF iOS Demo App :: Brandon Mackey :: AVF 1304</title>       
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
@@ -18,7 +18,7 @@
 <!------------------------ #### HOME PAGE HERE! #### -------------------------------------->
         <section data-role="page" id="home" data-theme="a">
             <div data-role="header" data-theme="b" >
-                <h1>AVF iOS Demo App  1303: Brandon Mackey</h1>
+                <h1>AVF 1304: Brandon Mackey</h1>
             </div>
                 
 <!----------------------- #### RESEARCH BUTTON #### ---------------------------------------->    
@@ -26,67 +26,37 @@
             <div data-role="popup" id="popupMenu" data-theme="a" data-position-to="origin">
                 <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
                     <li data-role="divider" data-theme="a">Choose a Week</li>
-                    <li><a href="#wk1Topics">Week 1</a></li>
-                    <li><a href="#wk2Topics">Week 2</a></li>
+                    <li><a href="#wk1Topics">Week 1 (Not available)</a></li>
+                    <li><a href="#wk2Topics">Week 2 (Not available)</a></li>
                     <li><a href="#">Week 3 (Not available)</a></li>
                     <li><a href="#">Week 4 (Not available)</a></li>
                 </ul>
             </div>
+            
+            
+<!----------------------- #### iOS / Android Native Features #### ---------------------------------------->      
             <div>  
                 <h2>iOS / Android Native Features</h2>
+                
                 <div>
-                    <a href="#camera"><img src="image/camera_icon.png" width="42" height="42"/> Camera </a>
-                </div> 
-                <div>
-                    <img src="image/clock_icon.png" width="42" height="42"/> Clock
-                </div>    
+                <a href="camera.html"><img src="image/camera_icon.png" width="42" height="42"/> Camera </a>
+                </div>     
                 <div>   
-                    <a href="#twitter"> <img src="image/twitter_icon.jpg" width="42" height="42"/> Twitter </a>
+                    <a href="twitter.html"> <img src="image/twitter_icon.jpg" width="42" height="42"/> Twitter </a>
                 </div>    
                 <div>
-                    <img src="image/weather_icon.png" width="42" height="42"/> Weather
+                    <a href="device.html"> <img src="image/weather_icon.png" width="42" height="42"/> Device </a>
                 </div>    
                 <div>   
                     <a href="#map"><img src="image/map_icon.jpg" width="42" height="42"/> Map </a>
                 </div>
                 <div>   
-                    <a href="#geo"><img src="image/compass_icon.png" width="42" height="42"/> Geolocation </a>
+                    <a href="geo.html"><img src="image/compass_icon.png" width="42" height="42"/> Geolocation </a>
                 </div>
-                <div>   
-                    <a href="#video"><img src="image/youtube_icon.png" width="42" height="42"/> Video Player </a>
-                </div>
-                <div>   
-                    <a href="#radio"><img src="image/radio_icon.jpg" width="42" height="42"/> Bonus Radio (The Booth Guy Show) </a>
-                </div>
+                
+                
             </div>
         </section>
-        
-<!----------------------- #### CAMERA PAGE HERE! #### --------------------------------------->
-        <div data-rel="page" id="camera" data-theme="a" data-add-back-btn="ture">
-            <div data-role="header">
-                <h1>Camera</h1>
-            </div>
-            <button onclick="takePicture();">Capture Photo</button> 
-            <button onclick="takePictureEdit();">Capture Editable Photo</button> 
-            <button onclick="retrievePicture(pictureSource.PHOTOLIBRARY);">From Photo Library</button>
-            <button onclick="retrievePicture(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button>
-            <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-            <img style="display:none;" id="largeImage" src=""/>
-        </div>
-        
-<!--------------------- #### TWITTER PAGE HERE! #### ----------------------------------------->
-        <div data-rel="page" id="twitter" data-theme="a" data-add-back-btn="ture">
-            
-            <div data-role="header" data-theme="b">
-                <h1>Twitter Feed</h1>
-            </div>
-          
-            <section data-role="content" id="data" data-theme="b" data-transition="pop">
-                <button id="getData" data-mini="true" data-inline="true" >Search Samsung Tweets</button>
-                <ul data-role="listview" id="tweets" data-inset="true"></ul>   
-            </section> 
-   
-        </div>
         
 <!--------------------- #### MAPS PAGE HERE! #### ------------------------------------------>
         <div data-role="page" id="map" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" data-add-back-btn="ture">
@@ -95,92 +65,10 @@
                 <h1>Map</h1>
             </div>
             
-            <a href="#map" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 
             <iframe src="map.html" width="760" height="1020" seamless></iframe>
 
         </div>
-        
-<!-------------------- #### GEOLOCATION PAGE HERE! #### -------------------------------------->
-        <div data-role="page" id="geo" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" data-add-back-btn="ture">
-            
-            <div data-role="header" data-theme="b">
-                <h1>Geolocation</h1>
-            </div>
-            <div>
-                <p id="geolocation">Finding geolocation...</p>
-            </div>
-            
-        </div>
-        
-<!-------------------- #### BONUS #### SPREAKER RADIO STATION #### ----------------------------->
-        <div data-role="page" id="radio" data-theme="a" data-add-back-btn="ture">
-            <div data-role="header" data-theme="b">
-                <h1>Bonus Radio Station</h1>
-                <div><h3>Caution radio station may contain adult language</h3></div>
-                <h2>The Booth Guy Show</h2>
-            </div>
-            <iframe src="http://www.spreaker.com/embed/player/standard?autoplay=false&color=0068c9&show_id=456984" style="width: 100%; height: 131px; min-width: 250px;" frameborder="0" scrolling="no"></iframe>
-        </div>
-        
-<!------------------- #### VIDEO PLAYER! #### ------------------------------------------------>
-        <div data-rel="page" id="video" data-theme="a" data-add-back-btn="ture">
-            
-            <div data-role="header" data-theme="b">
-                <h1>Video Player</h1>
-            </div>
-            <div id="player"></div>
-            
-        </div>
-        
-        
-                
-<!------------------- #### TOPICS PAGE HERE! #### ------------------------------------------------>
-        <div data-role="page" id="wk1Topics" data-theme="a" data-add-back-btn="true" data-mini="true">
-            
-           <div data-role="header" data-theme="b">
-                <h1>Week One Research Topics</h1>
-            </div>
-          
-            <div data-role="content" id="wk1Topic" data-theme="b" data-transition="pop">
-                <ul data-role="listview" id="wk1" data-inset="true"></ul>
-                    <li>
-                        1. I think companies like Twitter have you use there service to log in to apps so you only need one password to log in but it also gives Twitter access to use there service more. It lets them post stuff from the apps you are using and makes you spend more time with there service. 
-                    </li>
-                    <br />
-                    <li>
-                        2. JSON-P or JSON with padding,  it provides a method to request data from a server in a different domain, something prohibited by typical web browsers because of the same origin policy.
-                    </li>
-                    <br />
-                    <li>
-                        3. Programmableweb.com has more api's then I know what to do with but a geolocation api would be great for my What To Do? app if I am somewhere I could save a location of what to do later or like a bucket list to cross off something from that location. Also to take a picture would be nice to save with that geolocation.
-                    </li>
-                    <br />
-                    <li>
-                        4. I want to be able to take a picture and save it in the app for my What To Do? app.  I would also like to save a geolocation for that app as well. 
-                    </li>
-                    <br />
-                    <li>
-                        5. Problems in the past I have had is losing skills from last classes and not using them for a while and having to do lots of time researching to get back into the swing of things. Lessons learned, don't forget! Retain Everything!
-                    </li>
-            </div>     
-        </div>
-        
-<!------------------- #### TOPICS PAGE HERE! #### ---------------------------------------------------->
-        <div data-role="page" id="wk2Topics" data-theme="a" data-add-back-btn="true">
-            
-           <div data-role="header" data-theme="b">
-                <h1>Week Two Research Topics</h1>
-            </div>
-          
-            <div data-role="content" id="wk2Topics" data-theme="b" data-transition="pop">
-                <ul data-role="listview" id="wk2" data-inset="true"></ul>
-                    <li>
-                        1. No discussion post this week. 
-                    </li>
-            </div>    
-        </div>
-        
         
         
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -188,8 +76,7 @@
         <script type="text/javascript" src="cordova-2.5.0.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=Dog&callback=myFunc"></script>
-        <script type="text/javascript">   
-        </script>
+        <script type="text/javascript"></script>
         
     </body>
 </html>
