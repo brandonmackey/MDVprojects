@@ -1,9 +1,10 @@
 // Android //
 $('#home').on('pageinit', function(){
-
+	
 });
 
 $('#twitter').on('pageinit', function(){
+	
 	
 });
 
@@ -11,43 +12,29 @@ $('#device').on('click', function(){
 
 });
 
-$('#geo').on('click', function(){
 
-});
 
 
     // ------  Twitter DATA  -------//
 var getData = function() {
 	var twitterSearch = $('#twitterSearch').val();
-	alert('fire');
 	$.getJSON('http://search.twitter.com/search.json?q=' + twitterSearch + '&rpp=10&lang=en&include_entities=true&result_type=mixed&callback=?',
             function(data) {
             console.log(data);
             for (i=0, j=data.results.length; i<j; i++) {
-            $("#tweets")
-            .append(
-                    "<li>" +
-                     "<img src='" +
-                     data.results[i].profile_image_url + "' />" +
-                     "<h1>" +
-                     data.results[i].from_user_name +
-                     "<br />" +
-                     "<br />" +
-                     "<p>" +
-                     data.results[i].text
-                      );
+            $("#tweets").append("<li>" +"<img src='" + data.results[i].profile_image_url + "' />" + "<h1>" + data.results[i].from_user_name + "<br />" + "<br />" + "<p>" + data.results[i].text);
             }
-            $("#tweets").listview("refresh");
-            });
-	};
-	
-$('#getData').on('click', function() {
-    getData();    
-});
+            $("#tweets").listview("refresh");	    
+            });	
+    };
 
+$('#getData').on('click', function() {
+	getData();
+});
+	
 $('#clear').on('click', function() {
 	location.reload();
-});
+});	
 
 
     
@@ -56,7 +43,8 @@ $('#clear').on('click', function() {
 //------ MAPS -----//
 
 
-$( document ).on( "pageinit", function() {
+$('#map').on( "pageinit", function() {
+	
     $( "#geoMap iframe" )
         .attr( "width", 620 )
         .attr( "height", 480 );
@@ -92,6 +80,7 @@ $( document ).on( "pageinit", function() {
 //------------------------------------------------------------------//
 
     //------ CAMERA  -----//
+$('#camera').on( "pageinit", function() {
     
     var pictureSource;   // picture source
     var destinationType; // sets the format of returned value 
@@ -177,12 +166,15 @@ $( document ).on( "pageinit", function() {
     var failMsg = function(message) {
       alert('Failed because: ' + message);
     };
+});
     
   
  //-------------------------------------------------------//
  
     // #### Geolocation #### //
-    
+$('#geo').on('pageinit', function(){
+
+
     // Wait for Cordova to load
     //
     document.addEventListener("deviceready", onDeviceReady2, false);
@@ -204,7 +196,7 @@ $( document ).on( "pageinit", function() {
                             'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
                             'Heading: '            + position.coords.heading               + '<br />' +
                             'Speed: '              + position.coords.speed                 + '<br />' +
-                            'Timestamp: '          +                                   position.timestamp          + '<br />';
+                            'Timestamp: '          + position.timestamp                    + '<br />';
     };
 
     // onError Callback receives a PositionError object
@@ -213,6 +205,7 @@ $( document ).on( "pageinit", function() {
         alert('code: '    + error.code    + '\n' +
                 'message: ' + error.message + '\n');
     };
+});
 
 
 //------------------------------------------------------------------------------------------------------//    
@@ -220,6 +213,7 @@ $( document ).on( "pageinit", function() {
 //------------ Device ----------------------------------------------------// 
 
 
+$('#device').on( "pageinit", function() {
 var phoneName = window.device.name;
 var string = device.model;
 var name = device.name;
@@ -241,10 +235,40 @@ var deviceID = device.uuid;
                             'Device UUID: '     + device.uuid     + '<br />' + 
                             'Device Model: '    + device.model     + '<br />' + 
                             'Device Version: '  + device.version  + '<br />';
-};
-//------------------------------------------------------------------------------//   
- 
-/*---------- YOUTUBE -----------------------//   ## Not using youtube right now ##
+	};
+});
+//------------------------------------------------------------------------------//
+
+//------------ Connection ----------------------------------------------------//
+
+// Wait for Cordova to load
+    // 
+    document.addEventListener("deviceready", onDeviceReady4, false);
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady4(){
+        checkConnection();
+    };
+
+    var checkConnection = function(){
+        var networkState = navigator.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.WIFI]     = 'You are connected to WiFi';
+	states[Connection.CELL_3G]  = 'Cell 3G connection';
+        states[Connection.CELL_4G]  = 'Cell 4G connection';
+        states[Connection.CELL]     = 'Cell generic connection';
+        states[Connection.NONE]     = 'No network connection';
+
+        alert(states[networkState]);
+    };
+
+//------------------------------------------------------------------------------------------------------//
+
+//---------- YOUTUBE -----------------------//
+
 var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
@@ -258,7 +282,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'wvA2dACgbFs',
+          videoId: '5Fp2D9_wd84',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -284,4 +308,3 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
       function stopVideo() {
         player.stopVideo();
       };
-*/

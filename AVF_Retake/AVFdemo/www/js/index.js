@@ -1,22 +1,18 @@
 // iOS //
 $('#home').on('pageinit', function(){
-	
+	//alert("Welcome to my AVF Demo App!");
 });
 
-$('#twitter').on('pageinit', function(){
+$('#twitter').on('click', function(){
 	
-	$('#getData').on('click', function() {
-		getData();    
-	});
+	
 });
 
 $('#device').on('click', function(){
 
 });
 
-$('#geo').on('click', function(){
 
-});
 
 
     // ------  Twitter DATA  -------//
@@ -39,24 +35,27 @@ var getData = function() {
                      data.results[i].text
                       );
             }
-            $("#tweets").listview("refresh");	    
-            });	
+            $("#tweets").listview("refresh");
+            });
     };
-    
-$('#getData').on('click', function() {
-    getData();    
-});
 
+$('#getData').on('click', function() {
+	getData();
+});
+	
 $('#clear').on('click', function() {
 	location.reload();
 });
+    
+//------------------------------------------------------------------------
 
 //------------------------------------------------------------------------//
 
 //------ MAPS -----//
 
 
-$( document ).on( "pageinit", function() {
+$('#map').on( "pageinit", function() {
+	
     $( "#geoMap iframe" )
         .attr( "width", 620 )
         .attr( "height", 480 );
@@ -93,9 +92,10 @@ $( document ).on( "pageinit", function() {
 //------------------------------------------------------------------//
 
     //------ CAMERA  -----//
-    
+
+	
     var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value 
+    var destinationType; // sets the format of returned value
 
     // Wait for Cordova to connect with the device
     //
@@ -152,7 +152,7 @@ $( document ).on( "pageinit", function() {
     //
     var takePicture = function() {
       // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(photoBase, failMsg, { quality: 50,
+      navigator.camera.getPicture(photoBase, failMsg, { quality: 48,
         destinationType: destinationType.DATA_URL });
     };
 
@@ -168,10 +168,25 @@ $( document ).on( "pageinit", function() {
     //
     var retrievePicture = function(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(photoImage, failMsg, { quality: 50, 
+      navigator.camera.getPicture(photoImage, failMsg, { quality: 48, 
         destinationType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
         sourceType: source });
     };
+    
+	var cleanUp = function(){
+	  // Cleans up the image files stored in the temporary storage location	
+		navigator.camera.cleanup( cameraSuccess, cameraError );
+		navigator.camera.cleanup(onSuccess, onFail); 
+	 
+		var onSuccess = function(){
+		    console.log("Camera cleanup success.")
+		};
+		
+		var onFail = function(message){
+		    alert('Failed because: ' + message);
+		};
+	};
+	
 
     // Called if something bad happens.
     // 
@@ -183,10 +198,13 @@ $( document ).on( "pageinit", function() {
     setTimeout(function() { 
     // do your thing here!
     }, 0);
+
  //-------------------------------------------------------//
  
     // #### Geolocation #### //
-    
+$('#geo').on('pageinit', function(){
+
+
     // Wait for Cordova to load
     //
     document.addEventListener("deviceready", onDeviceReady2, false);
@@ -217,12 +235,13 @@ $( document ).on( "pageinit", function() {
         alert('code: '    + error.code    + '\n' +
                 'message: ' + error.message + '\n');
     };
+});
     
 //------------------------------------------------------------------------------------------------------//    
 
 //------------ Device ----------------------------------------------------// 
 
-
+$('#device').on( "pageinit", function() {
 var phoneName = window.device.name;
 var string = device.model;
 var name = device.name;
@@ -244,10 +263,37 @@ var deviceID = device.uuid;
                             'Device UUID: '     + device.uuid     + '<br />' + 
                             'Device Model: '    + device.model     + '<br />' + 
                             'Device Version: '  + device.version  + '<br />';
-};
-//------------------------------------------------------------------------------//   
- 
-/*---------- YOUTUBE -----------------------//   ## Not using youtube right now ##
+	};
+});
+//------------------------------------------------------------------------------//
+
+//------------ Connection ----------------------------------------------------//
+
+// Wait for Cordova to load
+    // 
+    document.addEventListener("deviceready", onDeviceReady4, false);
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady4(){
+        checkConnection();
+    };
+
+    var checkConnection = function(){
+        var networkState = navigator.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.WIFI]     = 'You are connected to WiFi';
+        states[Connection.NONE]     = 'No network connection';
+
+        alert(states[networkState]);
+    };
+
+//------------------------------------------------------------------------------------------------------//  
+
+//---------- YOUTUBE -----------------------//
+
 var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
@@ -261,7 +307,8 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'wvA2dACgbFs',
+	  // ### INSERT YOUTUBE VIDEO ID BELOW ### //
+          videoId: '5Fp2D9_wd84',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -287,4 +334,3 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
       function stopVideo() {
         player.stopVideo();
       };
-*/
