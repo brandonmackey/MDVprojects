@@ -47,9 +47,37 @@ $('#clear').on('click', function() {
 	location.reload();
 });
     
-//------------------------------------------------------------------------
-
 //------------------------------------------------------------------------//
+
+//--------- WEATHER -------------------------------------//
+
+$('#weather').on('pageinit',function() {
+  $.simpleWeather({
+    zipcode: '46060',
+    woeid: '12777567',
+    location: '',
+    unit: 'f',
+    success: function(weather) {
+    html = '<h2>'+weather.city+', '+weather.region+'</h2>';
+    html += '<p>'+weather.temp+'&deg; '+weather.units.temp+'<br /><span>'+weather.currently+'</span></p>';
+    html += '<img style="float:center;" width="125px" src="'+weather.image+'">';
+    html += '<a href="'+weather.link+'">View Forecast &raquo;</a>';
+    html += '<p>'+'High' +"  "+ weather.high + '</p>';
+    html += '<p>'+'Low' +"  "+ weather.low + '</p>';
+
+  
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+  });
+});
+$('#refresh').on('click', function() {
+	location.reload();
+});
+
+//--------------------------------------------------------------------------//
 
 //------ MAPS -----//
 
@@ -268,6 +296,7 @@ var deviceID = device.uuid;
 //------------------------------------------------------------------------------//
 
 //------------ Connection ----------------------------------------------------//
+$('#home').on('pageinit', function(){	
 
 // Wait for Cordova to load
     // 
@@ -289,6 +318,7 @@ var deviceID = device.uuid;
 
         alert(states[networkState]);
     };
+});
 
 //------------------------------------------------------------------------------------------------------//  
 
@@ -303,7 +333,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var player;
-      function onYouTubeIframeAPIReady() {
+      var onYouTubeIframeAPIReady = function() {
         player = new YT.Player('player', {
           height: '390',
           width: '640',
@@ -314,23 +344,22 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
             'onStateChange': onPlayerStateChange
           }
         });
-      }
+      };
 
       // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
+      var onPlayerReady = function(event) {
         event.target.playVideo();
-      }
+      };
 
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
       var done = false;
-      function onPlayerStateChange(event) {
+      var onPlayerStateChange = function(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
           setTimeout(stopVideo, 0);
           done = true;
         }
-      }
-      function stopVideo() {
-        player.stopVideo();
+      };
+      var stopVideo = function() {
+	  player.stopVideo();
       };

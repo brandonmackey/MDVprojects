@@ -12,6 +12,7 @@
         <!-- StyleSheets under here -->
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <!--<link rel="stylesheet" type="text/css" href="css/weather.css" /> -->
         
     </head>
     <body>
@@ -27,9 +28,8 @@
                 <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
                     <li data-role="divider" data-theme="a">Choose a Week</li>
                     <li><a href="wk1Topics.html">Week 1 </a></li>
-                    <li><a href="#wk2Topics">Week 2 (Not available)</a></li>
+                    <li><a href="wk2Topics.html">Week 2 </a></li>
                     <li><a href="#">Week 3 (Not available)</a></li>
-                    <li><a href="#">Week 4 (Not available)</a></li>
                 </ul>
             </div>
             
@@ -39,22 +39,25 @@
                 <h2>iOS / Android Native Features</h2>
                 
                 <div>
-                <a href="camera.html"><img src="image/camera_icon.png" width="42" height="42"/> Camera </a>
+                <a href="camera.html" data-ajax="false"><img src="image/camera_icon.png" width="42" height="42"/> Camera </a>
                 </div>     
                 <div>   
                     <a href="#twitter"> <img src="image/twitter_icon.jpg" width="42" height="42"/> Twitter </a>
+                </div>
+                <div>
+                    <a href="weather.html" data-ajax="false"><img src="image/weather_icon.png" width="42" height="42"/> Weather </a>
                 </div>
                 <div>   
                     <a href="#youtube"><img src="image/youtube_icon.png" width="42" height="42"/> Video Player </a>
                 </div>
                 <div>
-                    <a href="device.html"> <img src="image/device_icon.jpg" width="42" height="42"/> Device </a>
+                    <a href="device.html" data-ajax="false"> <img src="image/device_icon.jpg" width="42" height="42"/> Device </a>
                 </div>    
                 <div>   
                     <a href="#map"><img src="image/map_icon.jpg" width="42" height="42"/> Map </a>
                 </div>
                 <div>   
-                    <a href="geo.html"><img src="image/compass_icon.png" width="42" height="42"/> Geolocation </a>
+                    <a href="geo.html" data-ajax="false"><img src="image/compass_icon.png" width="42" height="42"/> Geolocation </a>
                 </div>
                 
                 
@@ -72,14 +75,15 @@
           
             <section data-role="content" id="data" data-theme="b" data-transition="pop">
                 
-                
-                <div>
-                    <label for="twitterSearch"></label>
-                    <input type="search" name="twitterSearch" id="twitterSearch" value="" placeholder="Search Tweets"/>
-                    <input type="submit" id="getData" data-mini="true" data-inline="true" value="Search" />
-                    <input type="reset" id="clear" data-mini="true" data-inline="true" value="Clear Search" />
-                    <ul data-role="listview" id="tweets" data-inset="true"></ul>
-                </div>
+               <form>
+                    <div>
+                        <label for="twitterSearch"></label>
+                        <input type="search" name="twitterSearch" id="twitterSearch" value="" placeholder="Search Tweets"/>
+                        <input type="submit" id="getData" data-mini="true" data-inline="true" value="Search" />
+                        <input type="reset" id="clear" data-mini="true" data-inline="true" value="Clear Search" />
+                        <ul data-role="listview" id="tweets" data-inset="true"></ul>
+                    </div>
+                </form> 
             
                 
                    
@@ -111,6 +115,7 @@
             <div id="player"></div>
             
         </div>
+        
         
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>

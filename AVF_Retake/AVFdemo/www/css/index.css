@@ -47,7 +47,7 @@ body{
 }
 
 /* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+@media screen and (min-width:400px) {
     .app {
         background-position:center;
         padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
@@ -56,7 +56,7 @@ body{
     }
 }
 
-/* TWITTER DATA/API BOX */ 
+/*----------------------- TWITTER DATA/API BOX ---------------------*/ 
 .ui-dialog-contain {
 	width: 92.5%;
 	max-width: 700px;
@@ -75,18 +75,18 @@ li{
     font-family:'HelveticaNeue', Helvetica, Arial;
 }
 
-/* twitter Search Button */
+/* -----------------------Twitter Search Button ---------------------*/
 
 #data{
     text-align: center;
 }
 
-/* Map */
+/*------------------------------- Map --------------------------------*/
 #map{
     text-align: center;
 }
 
-/* MAIN HOME PAGE */
+/*-------------------------- MAIN HOME PAGE ---------------------------*/
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -111,8 +111,8 @@ h3 {
     text-align:center;   
 }
 
-/* Research Button */
-h4{
+/*-------------------------- Research Button ------------------------------*/
+#home h4{
     text-align: right;
 }
 
@@ -128,7 +128,7 @@ h5{
     overflow: hidden;
 }
 
-/*-- BONUS RADIO TEXT--*/
+/*----------------------------- BONUS RADIO TEXT---------------------------------*/
 .ui-title {
     font-weight: bold;
     font-size: 14px;
@@ -138,7 +138,7 @@ h5{
     margin: 75px;
 }
 
-p {
+#player p {
     font-size: 14px;
     margin:10px;
     overflow:visible;
@@ -175,4 +175,6 @@ fieldset{
     background-color:#4B946A;
     display:none;
 }
+
+/*----------------- WEATHER CSS -------------------*/
 

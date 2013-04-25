@@ -240,7 +240,7 @@ var deviceID = device.uuid;
 //------------------------------------------------------------------------------//
 
 //------------ Connection ----------------------------------------------------//
-
+$('#home').on('pageinit', function(){
 // Wait for Cordova to load
     // 
     document.addEventListener("deviceready", onDeviceReady4, false);
@@ -264,6 +264,7 @@ var deviceID = device.uuid;
 
         alert(states[networkState]);
     };
+});
 
 //------------------------------------------------------------------------------------------------------//
 
@@ -278,33 +279,33 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var player;
-      function onYouTubeIframeAPIReady() {
+      var onYouTubeIframeAPIReady = function() {
         player = new YT.Player('player', {
           height: '390',
           width: '640',
+	  // ### INSERT YOUTUBE VIDEO ID BELOW ### //
           videoId: '5Fp2D9_wd84',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
           }
         });
-      }
+      };
 
       // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
+      var onPlayerReady = function(event) {
         event.target.playVideo();
-      }
+      };
 
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
       var done = false;
-      function onPlayerStateChange(event) {
+      var onPlayerStateChange = function(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
           setTimeout(stopVideo, 0);
           done = true;
         }
-      }
-      function stopVideo() {
-        player.stopVideo();
+      };
+      var stopVideo = function() {
+	  player.stopVideo();
       };
