@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<!-- ### Android ### -->
 <html>
     <head>
-        <title>AVF Android Demo App :: Brandon Mackey :: AVF 1304</title>       
+        <title>AVF iOS Demo App :: Brandon Mackey :: AVF 1304</title>       
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
@@ -38,10 +36,13 @@
                 <h2>iOS / Android Native Features</h2>
                 
                 <div>
-                <a href="camera.html" data-ajax="false"><img src="image/camera_icon.png" width="42" height="42"/> Camera </a>
+                <button onclick="captureImage();" id="takePic"><img src="image/camera_icon.png" width="42" height="42"/></button>
                 </div>     
                 <div>   
                     <a href="#twitter"> <img src="image/twitter_icon.jpg" width="42" height="42"/> Twitter </a>
+                </div>
+                <div>
+                    <a href="weather.html" data-ajax="false"><img src="image/weather_icon.png" width="42" height="42"/> Weather </a>
                 </div>
                 <div>   
                     <a href="#youtube"><img src="image/youtube_icon.png" width="42" height="42"/> Video Player </a>
@@ -71,18 +72,19 @@
           
             <section data-role="content" id="data" data-theme="b" data-transition="pop">
                 
-                
-                <div>
-                    <label for="twitterSearch"></label>
-                    <input type="search" name="twitterSearch" id="twitterSearch" value="" placeholder="Search Tweets"/>
-                    <input type="submit" id="getData" data-mini="true" data-inline="true" value="Search" />
-                    <input type="reset" id="clear" data-mini="true" data-inline="true" value="Clear Search" />
-                    <ul data-role="listview" id="tweets" data-inset="true"></ul>
-                </div>
+               <form>
+                    <div>
+                        <label for="twitterSearch"></label>
+                        <input type="search" name="twitterSearch" id="twitterSearch" value="" placeholder="Search Tweets"/>
+                        <a id="getData" data-role="button" data-mini="true" data-inline="true">Search</a>
+                        <input type="reset" id="clear" data-mini="true" data-inline="true" value="Clear Search" />
+                        <ul data-role="listview" id="tweets" data-inset="true"></ul>
+                    </div>
+                </form> 
             
                 
                    
-            </section> 
+            </section>
    
         </div>
         
@@ -95,7 +97,7 @@
             </div>
             
 
-            <iframe src="map.html" width="760" height="1020" seamless></iframe>
+            <iframe src="map.html" width="720" height="1280" seamless></iframe>
 
         </div>
         
@@ -110,6 +112,7 @@
             <div id="player"></div>
             
         </div>
+        
         
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>

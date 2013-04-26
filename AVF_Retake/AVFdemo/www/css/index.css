@@ -47,7 +47,7 @@ body{
 }
 
 /* Landscape layout (with min-width) */
-@media screen and (min-width:400px) {
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
         background-position:center;
         padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
@@ -86,7 +86,44 @@ li{
     text-align: center;
 }
 
+#map iframe {
+	margin-right: 36px;
+	margin-left: 36px;
+}
+
+/*---------------------------- DEVICE ------------------------------------*/
+p#deviceProperties {
+	text-align: center;
+}
+
+/*-----------------------------GEOLOCATION --------------------------------*/
+
+p#geolocation {
+	text-align: center;
+}
+
+/*----------------------------- CAMERA ------------------------------------- */
+
+div.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all {
+	width: 45px;
+	height: 45px;
+}
+
+#home div div div.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all span.ui-btn-inner span.ui-btn-text img {
+	
+}
+
+#home div div {
+	height: 56px;
+	width: 160px;
+}
+
+
+
 /*-------------------------- MAIN HOME PAGE ---------------------------*/
+
+
+
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -177,4 +214,66 @@ fieldset{
 }
 
 /*----------------- WEATHER CSS -------------------*/
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px){
+#weather {
+    background: #6f9dbe;
+    width: 512px;
+    padding: 5px 10px;
+    overflow: hidden;
+    border: 1px solid #6591b3;
+    text-align: center;
+    background: #09CEE8;
+    
+}
+}
+
+@media screen and (min-width:400px){
+#weather h2 {
+    color: #000;
+    text-shadow: rgba(250, 250, 250, 0.6) 2px 2px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+}
+
+@media screen and (min-width:400px){
+#weather p {
+    font-size: 40px;
+    margin: 30px 0 0;
+    text-align: center;
+}
+}
+
+@media screen and (min-width:400px){
+#weather p span {
+    font-size: 16px;
+    text-align: center;
+}
+}
+
+@media screen and (min-width:400px){
+#weather a {
+    display: block;
+    clear: both;
+    text-decoration: none;
+    color: #222;
+    font-size: 12px;
+    text-align: center;
+}
+}
+
+@media screen and (min-width:400px){
+#weather a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+}
+
+@media screen and (min-width:400px){
+div#weather {
+	height: 680px;
+	width: 960px;
+}
+}
+
 

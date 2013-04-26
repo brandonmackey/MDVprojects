@@ -1,9 +1,9 @@
 // Android //
 $('#home').on('pageinit', function(){
-	
+	//alert("Welcome to my AVF Demo App!");
 });
 
-$('#twitter').on('pageinit', function(){
+$('#twitter').on('click', function(){
 	
 	
 });
@@ -22,10 +22,21 @@ var getData = function() {
             function(data) {
             console.log(data);
             for (i=0, j=data.results.length; i<j; i++) {
-            $("#tweets").append("<li>" +"<img src='" + data.results[i].profile_image_url + "' />" + "<h1>" + data.results[i].from_user_name + "<br />" + "<br />" + "<p>" + data.results[i].text);
+            $("#tweets")
+            .append(
+                    "<li>" +
+                     "<img src='" +
+                     data.results[i].profile_image_url + "' />" +
+                     "<h1>" +
+                     data.results[i].from_user_name +
+                     "<br />" +
+                     "<br />" +
+                     "<p>" +
+                     data.results[i].text
+                      );
             }
-            $("#tweets").listview("refresh");	    
-            });	
+            $("#tweets").listview("refresh");
+            });
     };
 
 $('#getData').on('click', function() {
@@ -34,11 +45,39 @@ $('#getData').on('click', function() {
 	
 $('#clear').on('click', function() {
 	location.reload();
-});	
-
-
+});
     
 //------------------------------------------------------------------------//
+
+//--------- WEATHER -------------------------------------//
+
+$('#localWeather').on('pageinit',function() {
+  $.simpleWeather({
+    zipcode: '46060',
+    woeid: '12777567',
+    location: '',
+    unit: 'f',
+    success: function(weather) {
+    html = '<h2>'+weather.city+', '+weather.region+'</h2>';
+    html += '<p>'+weather.temp+'&deg; '+weather.units.temp+'<br /><span>'+weather.currently+'</span></p>';
+    html += '<img style="float:center;" width="135px" src="'+weather.image+'">';
+    html += '<a href="'+weather.link+'">View Forecast &raquo;</a>';
+    html += '<h3>'+'High' +"  "+ weather.high + '</h3>';
+    html += '<h3>'+'Low' +"  "+ weather.low + '</h3>';
+
+  
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+  });
+});
+$('#refresh').on('click', function() {
+	location.reload();
+});
+
+//--------------------------------------------------------------------------//
 
 //------ MAPS -----//
 
@@ -77,98 +116,53 @@ $('#map').on( "pageinit", function() {
         }
     });
 });
+
 //------------------------------------------------------------------//
 
-    //------ CAMERA  -----//
-$('#camera').on( "pageinit", function() {
-    
-    var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value 
 
-    // Wait for Cordova to connect with the device
+// ----   CAPTURE ---------//
+
+ // Called when capture operation is finished
     //
-    document.addEventListener("deviceready",onDeviceReady,false);
-
-    // Cordova is ready to be used!
-    //
-    function onDeviceReady() {
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-    }
-
-    // Called when a photo is successfully retrieved
-    //
-    var photoBase = function(imageData) {
-      // Uncomment to view the base64 encoded image data
-      // console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('smallImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-    };
-
-    // Called when a photo is successfully retrieved
-    //
-    var photoImage = function(imageURI) {
-      // Uncomment to view the image file URI 
-      // console.log(imageURI);
-
-      // Get image handle
-      //
-      var largeImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
-    };
-
-    // A button will call this function
-    //
-    var takePicture = function() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(photoBase, failMsg, { quality: 50,
-        destinationType: destinationType.DATA_URL });
-    };
-
-    // A button will call this function
-    //
-    var takePictureEdit = function() {
-      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-      navigator.camera.getPicture(photoBase, failMsg, { quality: 20, allowEdit: true,
-        destinationType: destinationType.DATA_URL });
-    };
-
-    // A button will call this function
-    //
-    var retrievePicture = function(source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(photoImage, failMsg, { quality: 50, 
-        destinationType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
-        sourceType: source });
+    var captureSuccess = function(mediaFiles) {
+        var i, len;
+        for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+            uploadFile(mediaFiles[i]);
+        }       
     };
 
     // Called if something bad happens.
     // 
-    var failMsg = function(message) {
-      alert('Failed because: ' + message);
+    var captureError = function(error) {
+        var msg = 'An error occurred during capture: ' + error.code;
+        navigator.notification.alert(msg, null, 'Uh oh!');
     };
-});
-    
-  
+
+    // A button will call this function
+    //
+    var captureImage = function() {
+        // Launch device camera application, 
+        // allowing user to capture up to 2 images
+        navigator.device.capture.captureImage(captureSuccess, captureError, {limit: 2});
+    };
+
+    // Upload files to server
+    var uploadFile = function (mediaFile) {
+        var ft = new FileTransfer(),
+            path = mediaFile.fullPath,
+            name = mediaFile.name;
+
+        ft.upload(path,
+            "http://my.domain.com/upload.php",
+            function(result) {
+                console.log('Upload success: ' + result.responseCode);
+                console.log(result.bytesSent + ' bytes sent');
+            },
+            function(error) {
+                console.log('Error uploading file ' + path + ': ' + error.code);
+            },
+            { fileName: name });   
+    };
  //-------------------------------------------------------//
  
     // #### Geolocation #### //
@@ -206,12 +200,10 @@ $('#geo').on('pageinit', function(){
                 'message: ' + error.message + '\n');
     };
 });
-
-
-//------------------------------------------------------------------------------------------------------//    
+    
+//------------------------------------------------------------------------------------------------------//       
 
 //------------ Device ----------------------------------------------------// 
-
 
 $('#device').on( "pageinit", function() {
 var phoneName = window.device.name;
@@ -281,8 +273,8 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
       var player;
       var onYouTubeIframeAPIReady = function() {
         player = new YT.Player('player', {
-          height: '390',
-          width: '640',
+          height: '800',
+          width: '480',
 	  // ### INSERT YOUTUBE VIDEO ID BELOW ### //
           videoId: '5Fp2D9_wd84',
           events: {

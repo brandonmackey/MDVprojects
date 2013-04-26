@@ -34,6 +34,7 @@ body{
                                       /* offset horizontal: half of image width and text area width */
     }
 }
+/*----------------------- TWITTER DATA/API BOX ---------------------*/ 
 .ui-dialog-contain {
 	width: 92.5%;
 	max-width: 700px;
@@ -43,14 +44,66 @@ body{
 	top: -15px;
 }
 
+#twitterSearch{
+    
+}
+
 li{
-    font-size: 8px;
-    font-family:'HelveticaNeue', Helvetica, Arial; 
+    font-size: 18px;
+    font-family:'HelveticaNeue', Helvetica, Arial;
+}
+
+/* -----------------------Twitter Search Button ---------------------*/
+
+#data{
+    text-align: center;
+}
+
+/*------------------------------- Map --------------------------------*/
+#map{
+    text-align: center;
+}
+
+#map iframe {
+	margin-right: 36px;
+	margin-left: 36px;
+}
+
+/*---------------------------- DEVICE ------------------------------------*/
+p#deviceProperties {
+	text-align: center;
+}
+
+/*-----------------------------GEOLOCATION --------------------------------*/
+
+p#geolocation {
+	text-align: center;
+}
+
+/*----------------------------- CAMERA ------------------------------------- */
+
+div.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all {
+	width: 45px;
+	height: 45px;
+}
+
+#home div div div.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all span.ui-btn-inner span.ui-btn-text img {
+	
+}
+
+#home div div {
+	height: 56px;
+	width: 160px;
 }
 
 
+
+/*-------------------------- MAIN HOME PAGE ---------------------------*/
+
+
+
 h1 {
-    font-size:8px;
+    font-size:24px;
     font-weight:normal;
     margin:0px;
     overflow:visible;
@@ -62,25 +115,35 @@ h2 {
     margin:30px;
     overflow:visible;
     padding:0px;
-    text-align:left;   
+    text-align:left;
+    font-size: 26px;
 }
 
 h3 {
-    margin:20px;
+    margin:10px;
     overflow:visible;
-    padding-top: 50px;
-    text-align:right;   
+    padding-top: 0px;
+    text-align:center;   
 }
 
-/* Research Button */
-h4{
+/*-------------------------- Research Button ------------------------------*/
+#home h4{
     text-align: right;
 }
+
+h5{
+    font-size: 18px;
+    font: bold;
+    padding: 0px;
+    margin: 2px;
+}
+
+
 .ui-li, .ui-li.ui-field-contain{
     overflow: hidden;
 }
 
-/*-- BONUS RADIO TEXT--*/
+/*----------------------------- BONUS RADIO TEXT---------------------------------*/
 .ui-title {
     font-weight: bold;
     font-size: 14px;
@@ -90,17 +153,19 @@ h4{
     margin: 75px;
 }
 
-p {
-    font-size: 8px;
+#player p {
+    font-size: 14px;
     margin:10px;
     overflow:visible;
     padding:0px;
-       
+    /*text-align:right; */
 }
 
 div{
     margin: 20px;
 }
+
+/* ----------------- */
 
 fieldset{
     max-width: 356px;
@@ -125,8 +190,66 @@ fieldset{
     background-color:#4B946A;
     display:none;
 }
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+
+/*----------------- WEATHER CSS -------------------*/
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px){
+#weather {
+    background: #6f9dbe;
+    width: 512px;
+    padding: 5px 10px;
+    overflow: hidden;
+    border: 1px solid #6591b3;
+    text-align: center;
+    background: #09CEE8;
+    
+}
+}
+
+@media screen and (min-width:400px){
+#weather h2 {
+    color: #000;
+    text-shadow: rgba(250, 250, 250, 0.6) 2px 2px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+}
+
+@media screen and (min-width:400px){
+#weather p {
+    font-size: 40px;
+    margin: 30px 0 0;
+    text-align: center;
+}
+}
+
+@media screen and (min-width:400px){
+#weather p span {
+    font-size: 16px;
+    text-align: center;
+}
+}
+
+@media screen and (min-width:400px){
+#weather a {
+    display: block;
+    clear: both;
+    text-decoration: none;
+    color: #222;
+    font-size: 12px;
+    text-align: center;
+}
+}
+
+@media screen and (min-width:400px){
+#weather a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+}
+
+@media screen and (min-width:400px){
+div#weather {
+	height: 680px;
+	width: 960px;
+}
 }
