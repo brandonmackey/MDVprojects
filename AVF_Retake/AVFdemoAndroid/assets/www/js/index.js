@@ -60,8 +60,7 @@ $('#localWeather').on('pageinit',function() {
     success: function(weather) {
     html = '<h2>'+weather.city+', '+weather.region+'</h2>';
     html += '<p>'+weather.temp+'&deg; '+weather.units.temp+'<br /><span>'+weather.currently+'</span></p>';
-    html += '<img style="float:center;" width="135px" src="'+weather.image+'">';
-    html += '<a href="'+weather.link+'">View Forecast &raquo;</a>';
+    html += '<img style="float:center;" width="200px" src="'+weather.image+'">';
     html += '<h3>'+'High' +"  "+ weather.high + '</h3>';
     html += '<h3>'+'Low' +"  "+ weather.low + '</h3>';
 
@@ -81,46 +80,43 @@ $('#refresh').on('click', function() {
 
 //------ MAPS -----//
 
-
-$('#map').on( "pageinit", function() {
+$('#geoMap').on( "pageinit", function() {
 	
-    $( "#geoMap iframe" )
-        .attr( "width", 620 )
-        .attr( "height", 480 );
-        
-    $( "#geoMap iframe" ).contents().find( "#mapScreen" )
-        .css( { "width" : 0, "height" : 0 } );
-
-    $( "#geoMap" ).on({
-        popupbeforeposition: function() {
-            var size = scale( 480, 320, 0, 1 ),
-                w = size.width,
-                h = size.height;
-
-            $( "#geoMap iframe" )
-                .attr( "width", w )
-                .attr( "height", h );
-                
-            $( "#geoMap iframe" ).contents().find( "#mapScreen" )
-                .css( { "width": w, "height" : h } );
-                
-        },
-        popupafterclose: function() {
-            $( "#geoMap iframe" )
-                .attr( "width", 0 )
-                .attr( "height", 0 );
-
-            $( "#geoMap iframe" ).contents().find( "#mapScreen" )
-                .css( { "width": 0, "height" : 0 } );
-                location.reload();
-        }
-    });
+	
+	var getGeo = function (position) {
+	  var myworld = document.createElement('div');
+	  myworld.id = 'map';
+	  myworld.style.height = '700px';
+	  myworld.style.width = '1024px';
+	  document.querySelector('article').appendChild(myworld);
+	  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	  var options = {
+	    zoom: 15,
+	    center: coords,
+	    mapTypeControl: true,
+	    navigationControlOptions: {
+	      style: google.maps.NavigationControlStyle.MEDIUM
+	    },
+	    mapTypeId: google.maps.MapTypeId.HYBRID
+	  };
+	  var map = new google.maps.Map(document.getElementById("map"), options);
+	  var marker = new google.maps.Marker({
+	      position: coords,
+	      map: map,
+	      title:"Found You!"
+	  });
+	};
+	if (navigator.geolocation) {
+	  navigator.geolocation.getCurrentPosition(getGeo);
+	} else {
+	  error('Geo Location is not supported, Which means you are very LOST!');
+	}
 });
-
 //------------------------------------------------------------------//
 
 
 // ----   CAPTURE ---------//
+
 
  // Called when capture operation is finished
     //
@@ -135,7 +131,8 @@ $('#map').on( "pageinit", function() {
     // 
     var captureError = function(error) {
         var msg = 'An error occurred during capture: ' + error.code;
-        navigator.notification.alert(msg, null, 'Uh oh!');
+        // comment out to get rid of error msg
+	//navigator.notification.alert(msg, null, 'Uh oh!');
     };
 
     // A button will call this function
@@ -143,26 +140,9 @@ $('#map').on( "pageinit", function() {
     var captureImage = function() {
         // Launch device camera application, 
         // allowing user to capture up to 2 images
-        navigator.device.capture.captureImage(captureSuccess, captureError, {limit: 2});
+        navigator.device.capture.captureImage(captureSuccess, captureError, {limit: 50});
     };
 
-    // Upload files to server
-    var uploadFile = function (mediaFile) {
-        var ft = new FileTransfer(),
-            path = mediaFile.fullPath,
-            name = mediaFile.name;
-
-        ft.upload(path,
-            "http://my.domain.com/upload.php",
-            function(result) {
-                console.log('Upload success: ' + result.responseCode);
-                console.log(result.bytesSent + ' bytes sent');
-            },
-            function(error) {
-                console.log('Error uploading file ' + path + ': ' + error.code);
-            },
-            { fileName: name });   
-    };
  //-------------------------------------------------------//
  
     // #### Geolocation #### //
@@ -201,7 +181,7 @@ $('#geo').on('pageinit', function(){
     };
 });
     
-//------------------------------------------------------------------------------------------------------//       
+//------------------------------------------------------------------------------------------------------//    
 
 //------------ Device ----------------------------------------------------// 
 

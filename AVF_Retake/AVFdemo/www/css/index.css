@@ -56,6 +56,30 @@ body{
     }
 }
 
+/*------------------- ALL ICON LABELS ----------------------------------*/
+
+/*@media only screen and (max-width: 480px) {
+    #page {
+        width: 480px;
+        margin-left: 1%;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    #page {
+        width: 768px;
+        margin-left: 1%;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    #native {
+        float:left;
+        width: 59%; 
+        min-height: 512px;  
+    }
+}*/
+
 /*----------------------- TWITTER DATA/API BOX ---------------------*/ 
 .ui-dialog-contain {
 	width: 92.5%;
@@ -82,14 +106,7 @@ li{
 }
 
 /*------------------------------- Map --------------------------------*/
-#map{
-    text-align: center;
-}
 
-#map iframe {
-	margin-right: 36px;
-	margin-left: 36px;
-}
 
 /*---------------------------- DEVICE ------------------------------------*/
 p#deviceProperties {
@@ -112,13 +129,6 @@ div.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all {
 #home div div div.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all span.ui-btn-inner span.ui-btn-text img {
 	
 }
-
-#home div div {
-	height: 56px;
-	width: 160px;
-}
-
-
 
 /*-------------------------- MAIN HOME PAGE ---------------------------*/
 
@@ -145,8 +155,22 @@ h3 {
     margin:10px;
     overflow:visible;
     padding-top: 0px;
-    text-align:center;   
+    margin-left: auto;
+    margin-right: auto;   
 }
+
+#home div div a.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all {
+	height: 61px;
+	width: 80px;
+	margin-bottom: -6px;
+}
+
+#home div div div.ui-btn.ui-shadow.ui-btn-corner-all.ui-btn-up-a {
+	width: 77px;
+	height: 61px;
+	margin-bottom: -6px;
+}
+
 
 /*-------------------------- Research Button ------------------------------*/
 #home h4{
@@ -213,10 +237,68 @@ fieldset{
     display:none;
 }
 
+
 /*----------------- WEATHER CSS -------------------*/
+
+#weather{
+    background: #09CEE8;width: 512px;
+    padding: 5px 10px;
+    overflow: hidden;
+    border: 1px solid #6591b3;
+}
+
+#weather h2 {
+    color: #000;
+    text-shadow: rgba(250, 250, 250, 0.6) 2px 2px 0;
+    margin-top: 80px;
+}
+
+#weather h3 {
+    margin-left: 10px;
+    
+}
+
+#weather img {
+    margin-left: 55px;
+}
+
+#weather p {
+    font-size: 40px;
+    margin: 30px 0 0;
+    margin-left: 75px;
+}
+
+#weather span {
+    font-size: 16px;
+    margin-left: 35px;
+}
+
+#weather a {
+    display: block;
+    clear: both;
+    text-decoration: none;
+    color: #222;
+    font-size: 12px;
+    margin-left: 80px;
+    
+}
+
+#weather a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+
+div#weather {
+	height: 1280px;
+	width: 710px;
+}
+
+/*--------------------- MQ WEATHER ------------------------*/
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px){
 #weather {
-    background: #6f9dbe;
+
     width: 512px;
     padding: 5px 10px;
     overflow: hidden;
@@ -227,7 +309,7 @@ fieldset{
 }
 }
 
-@media screen and (min-width:400px){
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px){
 #weather h2 {
     color: #000;
     text-shadow: rgba(250, 250, 250, 0.6) 2px 2px 0;
@@ -236,7 +318,13 @@ fieldset{
 }
 }
 
-@media screen and (min-width:400px){
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px){
+#weather h3 {
+    text-align: center;
+}
+}
+
+@media screen and  (min-aspect-ratio: 1/1) and (min-width:400px){
 #weather p {
     font-size: 40px;
     margin: 30px 0 0;
@@ -244,14 +332,14 @@ fieldset{
 }
 }
 
-@media screen and (min-width:400px){
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px){
 #weather p span {
     font-size: 16px;
     text-align: center;
 }
 }
 
-@media screen and (min-width:400px){
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px){
 #weather a {
     display: block;
     clear: both;
@@ -262,18 +350,16 @@ fieldset{
 }
 }
 
-@media screen and (min-width:400px){
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px){
 #weather a:hover {
     color: #000;
     text-decoration: underline;
 }
 }
 
-@media screen and (min-width:400px){
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px){
 div#weather {
 	height: 680px;
 	width: 960px;
 }
 }
-
-
