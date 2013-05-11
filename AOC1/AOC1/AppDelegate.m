@@ -24,66 +24,26 @@
     [self.window makeKeyAndVisible];
     
     
-    NSLog(@"Hello my name is Brandon Mackey");
+    NSLog(@"My name is Brandon Mackey and I'm Mexico bound!");
     
-    float age = 30.9f;
+    float daysTill = 50.2f;
     
-    BOOL travel = YES;
-    
-    NSLog(@"age=%.0f", age);
-    
-    NSLog(@"I am in the Mobile Dev Program at Full Sail");
-   
-    int aocGrade = 70;
-    
-    // if & else if & else function
-    
-    if (aocGrade > 69)
-    {
-        NSLog(@"You are passing the class!");
-    }
-    else if (aocGrade < 70)
-    {
-        NSLog(@"You are going to fail and retake the class.");
-    }
-    else
-    {
-        NSLog(@"What class is this???");
-    }
-    
-    // nested loop
-    
-    int avf = 3;
-    int avfRetake = 4;
-    for (int avfA = 0;  avfA<= 3; avfA++) {
-        NSLog(@"I went through week %d in AVF then Withdraw Pass", avf);
-        avf++;
-        for (int avfRetakeB = 0; avfRetakeB <= 4; avfRetakeB++) {
-            NSLog(@"I went through all %d weeks of AVF and passed with a B+", avfRetake);
-            avfRetake++;
-        }
-        break;
-    }
-    
-    
-    // for loop with Concatenating strings. End first string with %@ 
-    for (int x=18; x > 0; x--)
-    {
-        NSLog(@"I graduate school in %d %@", x , @"months!");
-    }
-    
+    NSLog(@"I have %.0f days till I leave.", daysTill);
     
     // while loop
     
-    int weeksLeft = 4;
-    while (weeksLeft > 0) {
-        NSLog(@"I have %d weeks left", weeksLeft);
-        weeksLeft--;
+    int weeks = 7;
+    while (weeks > 0) {
+        NSLog(@"I have %d weeks left till we go south of the border", weeks);
+        weeks--;
     }
     
+    NSLog(@"July 1 is the day!");
+   
+
     
     
-    
+
     
     return YES;
 }
