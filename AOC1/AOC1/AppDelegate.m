@@ -39,6 +39,23 @@
     }
     
     NSLog(@"July 1 is the day!");
+    
+    // if & else if & else function
+    
+    int travelMiles = 2700
+    
+    if (travelMiles > 2699)
+    {
+        NSLog(@"Thats way to many miles to drive, lets fly!");
+    }
+    else if (travelMiles < 2700)
+    {
+        NSLog(@"I might want to drive and see the scenery.");
+    }
+    else
+    {
+        NSLog(@"Forget this lets go to Florida.");
+    }
    
 
     
