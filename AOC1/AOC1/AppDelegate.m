@@ -42,7 +42,7 @@
     
     // if & else if & else function
     
-    int travelMiles = 2700
+    int travelMiles = 2700;
     
     if (travelMiles > 2699)
     {
@@ -56,7 +56,14 @@
     {
         NSLog(@"Forget this lets go to Florida.");
     }
-   
+    
+    // for loop. 
+    
+    for (int x=47; x > 0; x--)
+    {
+        NSLog(@"%d day until we leave", x);
+    }
+    
 
     
     
