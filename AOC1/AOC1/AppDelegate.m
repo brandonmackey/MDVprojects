@@ -29,6 +29,7 @@
     float daysTill = 50.2f;
     
     NSLog(@"I have %.0f days till I leave.", daysTill);
+    NSLog(@"The real number is %.1f days untill we leave but whos counting.", daysTill);
     
     // while loop
     
@@ -78,7 +79,26 @@
         }
         break;
     }
-
+    
+    
+    // AND, OR comparison with if, else if, and else  
+    int bags = 2;
+    float realBags = 3.5;
+    bool checkBags = NO;
+    
+    if ((checkBags == YES) || (bags > 2))
+    {
+        NSLog(@"You have to much luggage.");
+    }
+    else if ((realBags == 3.5) && (checkBags == NO))
+    {
+        NSLog(@"You must have %.1f and must check bags which I don't want to do.", realBags);
+    }
+    else
+    {
+        NSLog(@"You can just carry on your luggage.");
+    }
+    
     
     
 
