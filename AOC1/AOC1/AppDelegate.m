@@ -64,6 +64,20 @@
         NSLog(@"%d day until we leave", x);
     }
     
+    // nested loop.
+    
+    int work = 7;
+    int offWork = 3;
+    for (int mywork = 0;  mywork<= 7; mywork++) {
+        NSLog(@"In %d weeks I'll be off work on vacation", work);
+        work++;
+        for (int myoffWork = 0; myoffWork <= 3; myoffWork++) {
+            NSLog(@"I will be off %d weeks then back to the grind!", offWork);
+            offWork++;
+            break;
+        }
+        break;
+    }
 
     
     
