@@ -128,15 +128,28 @@
     
     [self.view addSubview:list];
     
+    NSArray *items = [[NSArray alloc] initWithObjects:@"George",@"Lennie",@"Slim",@"Crooks",@"and Curley", nil];
     
-    //listItems = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
+    NSMutableString *mutItemsList = [[NSMutableString alloc] initWithCapacity:0];
+    
+    for (int i=0; i< [items count]; i++) {
+        [mutItemsList appendString:[NSString stringWithFormat:@"%@" ,[mutItemsList objectAtIndex:i]]];
+         }
     
     
+    // LIST OF ITEMS ARRAY
     
+    listItems = [[UILabel alloc] initWithFrame:(CGRectMake(0.0f, 450.0f, 450.0f, 50.0f))];
     
+    if (listItems != nil){
+        listItems.backgroundColor = [UIColor colorWithRed:0.390 green:0.588 blue:0.431 alpha:1] /*#96966e*/ /*GREENISH*/;
+        listItems.text = mutItemsList;
+        listItems.textAlignment = NSTextAlignmentCenter;
+        listItems.textColor = [UIColor colorWithRed:0.23 green:0.804 blue:0.990 alpha:1] /*#9eb4f0*/ /*BABYBLUE*/;
+        listItems.numberOfLines = 2;
+    }
     
-    
-    
+    [self.view addSubview:listItems];
     
     
     [super viewDidLoad];
