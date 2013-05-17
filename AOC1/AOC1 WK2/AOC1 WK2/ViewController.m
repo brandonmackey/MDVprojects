@@ -44,14 +44,32 @@
     [self.view addSubview:aurthorLabel];
     
     
+    // AUTHOR NAME
+    
+    authorName = [[UILabel alloc] initWithFrame:(CGRectMake(170.0f, 35.0f, 280.0f, 30.0f))];
+    
+    if (authorName != nil){
+        authorName.backgroundColor = [UIColor yellowColor];
+        authorName.text =@"John Steinbeck";
+        authorName.textAlignment = NSTextAlignmentLeft;
+        authorName.textColor = [UIColor darkGrayColor];
+    }
+    
+    [self.view addSubview:authorName];
     
     
-    //authorName = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
     
     
+    publish = [[UILabel alloc] initWithFrame:(CGRectMake(0.0f, 70.0f, 170.0f, 30.0f))];
     
+    if (publish != nil){
+        publish.backgroundColor = [UIColor greenColor];
+        publish.text =@"Published:";
+        publish.textAlignment = NSTextAlignmentRight;
+        publish.textColor = [UIColor brownColor];
+    }
     
-    //publish = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
+    [self.view addSubview:publish];
     
     
     //publishDate = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
