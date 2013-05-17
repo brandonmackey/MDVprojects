@@ -58,7 +58,7 @@
     [self.view addSubview:authorName];
     
     
-    
+    // PUBLISHED
     
     publish = [[UILabel alloc] initWithFrame:(CGRectMake(0.0f, 70.0f, 170.0f, 30.0f))];
     
@@ -72,10 +72,32 @@
     [self.view addSubview:publish];
     
     
-    //publishDate = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
+    // PUBLISHED DATE
+    
+    publishDate = [[UILabel alloc] initWithFrame:(CGRectMake(170.0f, 70.0f, 280.0f, 30.0f))];
+    
+    if (publishDate != nil){
+        publishDate.backgroundColor = [UIColor blueColor];
+        publishDate.text =@"1937";
+        publishDate.textAlignment = NSTextAlignmentLeft;
+        publishDate.textColor = [UIColor magentaColor];
+    }
+    
+    [self.view addSubview:publishDate];
     
     
-    //summary = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
+    // SUMMARY
+    
+    summary = [[UILabel alloc] initWithFrame:(CGRectMake(0.0f, 105.0f, 170.0f, 30.0f))];
+    
+    if (summary != nil){
+        summary.backgroundColor = [UIColor cyanColor];
+        summary.text =@"Summary:";
+        summary.textAlignment = NSTextAlignmentLeft;
+        summary.textColor = [UIColor purpleColor];
+    }
+    
+    [self.view addSubview:summary];
     
     
     //sumText = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
