@@ -128,13 +128,16 @@
     
     [self.view addSubview:list];
     
-    NSArray *items = [[NSArray alloc] initWithObjects:@"George",@"Lennie",@"Slim",@"Crooks",@"and Curley", nil];
+    
+    // NSArray & MutableString for Items Array
+    
+    /*NSArray *items = [[NSArray alloc] initWithObjects:@"George",@"Lennie",@"Slim",@"Crooks",@"and Curley", nil];
     
     NSMutableString *mutItemsList = [[NSMutableString alloc] initWithCapacity:0];
     
     for (int i=0; i< [items count]; i++) {
         [mutItemsList appendString:[NSString stringWithFormat:@"%@" ,[mutItemsList objectAtIndex:i]]];
-         }
+         }*/
     
     
     // LIST OF ITEMS ARRAY
@@ -143,7 +146,7 @@
     
     if (listItems != nil){
         listItems.backgroundColor = [UIColor colorWithRed:0.390 green:0.588 blue:0.431 alpha:1] /*#96966e*/ /*GREENISH*/;
-        listItems.text = mutItemsList;
+        listItems.text = @"Getting a weird warning so commented out";
         listItems.textAlignment = NSTextAlignmentCenter;
         listItems.textColor = [UIColor colorWithRed:0.23 green:0.804 blue:0.990 alpha:1] /*#9eb4f0*/ /*BABYBLUE*/;
         listItems.numberOfLines = 2;
