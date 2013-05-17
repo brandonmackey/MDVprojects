@@ -100,9 +100,34 @@
     [self.view addSubview:summary];
     
     
-    //sumText = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
+    // SUMMARY TEXT
     
-    //list = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
+    sumText = [[UILabel alloc] initWithFrame:(CGRectMake(0.0f, 140.0f, 450.0f, 270.0f))];
+    
+    if (sumText != nil){
+        sumText.backgroundColor = [UIColor lightGrayColor];
+        sumText.text =@"They are an unlikely pair: George is 'small and quick and dark of face'; Lennie a man of tremendous size, has the mind of a young child. Yet they have formed a 'family' clinging togeher in the face of loneliness and alienation. They hope to one day attain their shared dream of settling down on their own piece of land.  They are fleeing from their previous employment in Weed, California, where they were run out of town after Lennie's love of stroking soft things resulted in an accusation of attempted rape when he touched a young woman's dress, and would not let go. It soon becomes clear that the two are close friends and George is Lennie's protector. The theme of friendship is constant throughout the story.";
+        sumText.textAlignment = NSTextAlignmentCenter;
+        sumText.textColor = [UIColor orangeColor];
+        sumText.numberOfLines = 15;
+    }
+    
+    [self.view addSubview:sumText];
+    
+    
+    // LIST 
+    
+    list = [[UILabel alloc] initWithFrame:(CGRectMake(0.0f, 415.0f, 170.0f, 30.0f))];
+    
+    if (list != nil){
+        list.backgroundColor = [UIColor colorWithRed:0.949 green:0.059 blue:0.416 alpha:1] /*#f20f6a*/ /*PINK*/;
+        list.text =@"List of Items:";
+        list.textAlignment = NSTextAlignmentLeft;
+        list.textColor = [UIColor colorWithRed:0.439 green:0.812 blue:0.29 alpha:1] /*#70cf4a*/ /*LIME*/;
+    }
+    
+    [self.view addSubview:list];
+    
     
     //listItems = [[UILabel alloc] initWithFrame:(CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>))];
     
