@@ -131,14 +131,23 @@
     
     // NSArray & MutableString for Items Array
     
-    /*NSArray *items = [[NSArray alloc] initWithObjects:@"George",@"Lennie",@"Slim",@"Crooks",@"and Curley", nil];
+    NSString *person1 = @"George",
+             *person2 = @" Lennie",
+             *person3 = @" SLim",
+             *person4 = @" Crooks",
+             *person5 = @" and Curley";
     
-    NSMutableString *mutItemsList = [[NSMutableString alloc] initWithCapacity:0];
+    NSArray *names = [[NSArray alloc] initWithObjects:person1, person2, person3, person4, person5, nil];
     
-    for (int i=0; i< [items count]; i++) {
-        [mutItemsList appendString:[NSString stringWithFormat:@"%@" ,[mutItemsList objectAtIndex:i]]];
-         }*/
+    NSMutableString *mutItems = [[NSMutableString alloc] initWithCapacity:0];
     
+    for (int i=0; i < names.count; i++) {
+        [mutItems appendString:[names objectAtIndex: i]];
+        
+        if ( i < names.count -1) {
+        [mutItems appendString:@","];
+        }
+    }
     
     // LIST OF ITEMS ARRAY
     
@@ -146,7 +155,7 @@
     
     if (listItems != nil){
         listItems.backgroundColor = [UIColor colorWithRed:0.390 green:0.588 blue:0.431 alpha:1] /*#96966e*/ /*GREENISH*/;
-        listItems.text = @"Getting a weird warning so commented out";
+        listItems.text = mutItems;
         listItems.textAlignment = NSTextAlignmentCenter;
         listItems.textColor = [UIColor colorWithRed:0.23 green:0.804 blue:0.990 alpha:1] /*#9eb4f0*/ /*BABYBLUE*/;
         listItems.numberOfLines = 2;
