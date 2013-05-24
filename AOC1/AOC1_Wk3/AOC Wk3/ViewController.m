@@ -62,7 +62,7 @@
  
 //////////////////////////////////////// CALL FUNCTIONS GO HERE!!  ///////////////////////////////////////////////    
     
-    // Add Function and log to debugger
+    ////// Add Function and log to debugger
     
     NSInteger addFunct = [self Add:5 myInt2:6];   // step 6
     NSLog(@"The Add function is = to %d", addFunct);
@@ -76,20 +76,22 @@
     
     
     
-    // Call append Function Display UIAlertView w/ appended string using displayAlertWithString
+    ////// Call append Function Display UIAlertView w/ appended string using displayAlertWithString
     
     NSString *myAlert = [self append:@"Why is the sky blue?" myStr2:@" Because I said so."];
     [self displayAlertWithString: myAlert];
     
+    
+    ////// Compare function with two integer values, display an UIAlertView both with the input values and the result using the DisplayAlertWithString function
     
     NSInteger intVal = 100;
     NSInteger intVal2 = 100;
     BOOL compareVals = [self compare:intVal myInt2:intVal2];
     
     if (compareVals == YES)
-    {
-        NSString *sameNum = [[NSString alloc] initWithFormat:@"%d and %d match", intVal, intVal2];
-        [self displayAlertWithString: sameNum];
+        {
+            NSString *sameNum = [[NSString alloc] initWithFormat:@"%d and %d match", intVal, intVal2];
+            [self displayAlertWithString: sameNum];
     
          }else
             {
