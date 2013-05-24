@@ -82,7 +82,19 @@
     [self displayAlertWithString: myAlert];
     
     
+    NSInteger intVal = 100;
+    NSInteger intVal2 = 100;
+    BOOL compareVals = [self compare:intVal myInt2:intVal2];
     
+    if (compareVals == YES)
+    {
+        NSString *sameNum = [[NSString alloc] initWithFormat:@"%d and %d match", intVal, intVal2];
+        [self displayAlertWithString: sameNum];
+    
+         }else
+            {
+                [self displayAlertWithString:@"These numbers do not match!"];
+            }
     
     
     
