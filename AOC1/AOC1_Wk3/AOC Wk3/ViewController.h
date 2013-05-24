@@ -16,6 +16,8 @@
 -(int)Add:(NSInteger) myInt myInt2:(NSInteger)myInt2;
 -(BOOL)compare:(NSInteger)myInt myInt2:(NSInteger)myInt2;
 - (NSString*)append:(NSString*)myStr myStr2:(NSString*)myStr2;
+-(void) displayAlertWithString:(NSString*) displayAlert;
+
 
 
 @end

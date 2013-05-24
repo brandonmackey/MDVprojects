@@ -14,16 +14,19 @@
 
 @implementation ViewController
 
+//////////////////////////////////////// FUNCTIONS GO HERE!!  ///////////////////////////////////////////////
+
+
 /////  Function called Add with two parameters and return both numbers 5 + 6 = 11  //////////////////////////
 
--(int)Add:(NSInteger) myInt myInt2:(NSInteger)myInt2
+-(int)Add:(NSInteger) myInt myInt2:(NSInteger)myInt2      // added to ViewController.h
 {
-    return (myInt + myInt2);
+    return myInt + myInt2;
 }
 
 /////  BOOL Function compares the two integers from step 1 are they equal YES or NO  //////////////////////////
 
--(BOOL)compare:(NSInteger)myInt myInt2:(NSInteger)myInt2
+-(BOOL)compare:(NSInteger)myInt myInt2:(NSInteger)myInt2    // added to ViewController.h
 
 {
     if (myInt == myInt2) {
@@ -35,21 +38,45 @@
 
 /////  Append Function takes two NSStrings and returns a new string with a MutableString method //////////////////////////
 
-- (NSString*)append:(NSString*)myStr myStr2:(NSString*)myStr2
+- (NSString*)append:(NSString*)myStr myStr2:(NSString*)myStr2     // added to ViewController.h
 {
     NSMutableString *myMutableStr = [[NSMutableString alloc]initWithFormat:myStr];
     [myMutableStr appendString:myStr2];
     return myMutableStr;
 }
 
+///// DisplayAlertWithString Function will take a parameter an NSString  //////////////////////////
 
+-(void) displayAlertWithString:(NSString*) myMsg
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Loading" message:myMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    
+    if (alertView != nil) {
+        [alertView show];
+    }
+}
 
 
 - (void)viewDidLoad
 {
+ 
+//////////////////////////////////////// CALL FUNCTIONS GO HERE!!  ///////////////////////////////////////////////    
     
-    int name = [self Add:5 myInt2:6];
-    NSLog(@"The Add function is = to %d", name);
+    // Add Function and log to debugger
+    
+    int addFunct = [self Add:5 myInt2:6];
+    NSLog(@"The Add function is = to %d", addFunct);
+    
+    // Call append Function Display UIAlertView w/ appended string using displayAlertWithString
+    
+    NSString *myAlert = [self append:@"Why is the sky blue" myStr2:@"because I said so."];
+    [self displayAlertWithString: myAlert];
+    
+    
+    
+    
+    
+    
     [super viewDidLoad];
 	
     
