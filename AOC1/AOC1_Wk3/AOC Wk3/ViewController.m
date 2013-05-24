@@ -64,12 +64,21 @@
     
     // Add Function and log to debugger
     
-    int addFunct = [self Add:5 myInt2:6];
+    NSInteger addFunct = [self Add:5 myInt2:6];   // step 6
     NSLog(@"The Add function is = to %d", addFunct);
+    
+    NSNumber *comboInt = [[NSNumber alloc] initWithInt:addFunct];  // combine the addFunct number VALUE
+    
+    NSString *convertStr = [NSString stringWithFormat:@"The number is %@", comboInt]; // add to alert msg
+    
+    [self displayAlertWithString:convertStr]; // display to alert box
+    
+    
+    
     
     // Call append Function Display UIAlertView w/ appended string using displayAlertWithString
     
-    NSString *myAlert = [self append:@"Why is the sky blue" myStr2:@"because I said so."];
+    NSString *myAlert = [self append:@"Why is the sky blue?" myStr2:@" Because I said so."];
     [self displayAlertWithString: myAlert];
     
     
