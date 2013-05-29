@@ -13,6 +13,7 @@
     UILabel *userName;
     UITextField *usernameField;
     UIButton *login;
+    UILabel *enterUserMsg;
     
 }
 

@@ -54,6 +54,21 @@
         [self.view addSubview:login];
     }
     
+    // Created another UILabel beneath with the default text "Please Enter Username"
+    
+    enterUserMsg = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 80.0f, 320.0f, 80.0f)];
+    
+    if (enterUserMsg != nil)
+    {
+        enterUserMsg.text = @"Please Enter Username!";
+        enterUserMsg.backgroundColor = [UIColor grayColor];
+        enterUserMsg.textColor = [UIColor blueColor];
+        enterUserMsg.textAlignment = NSTextAlignmentCenter;
+        [self.view addSubview:enterUserMsg];
+        
+    }
+    
+    //
     
     
     
@@ -61,6 +76,33 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+
+
+-(void) onClick: (UIButton*)button
+{
+    // Added a target to the UIButton to call a function called onClick when the user presses the Login button. If the user has not entered any text into the UITextField, display in the UILabel, "Username Cannot be Empty". Otherwise, display "User: username has been logged in".
+    
+    if (button.tag == LOGIN)
+    {
+        NSString *username = usernameField.text;
+        if (username.length == 0)
+        {
+            enterUserMsg.text = @"Username Cannot be Emtpy";
+        }
+        else
+        {
+            NSString *loggedIn = [[NSString alloc] initWithFormat:@"User: %@ has been logged in", username];
+            enterUserMsg.text = loggedIn;
+        }
+    
+    
+    }
+    
+    
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
