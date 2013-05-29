@@ -9,6 +9,8 @@
 #import "ViewController.h"
 
 #define LOGIN 0
+#define DATE 1
+
 
 @interface ViewController ()
 
@@ -68,7 +70,19 @@
         
     }
     
-    //
+    // Created a UIButton for Show Date
+    
+    dateBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+    if (dateBtn != nil)
+    {
+        dateBtn.tag = DATE;
+        dateBtn.frame = CGRectMake(10.0f, 175.0f, 90.0f, 50.0f);
+        [dateBtn setTitle:@"Show Date" forState:UIControlStateNormal];
+        [dateBtn addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:dateBtn];
+                                                                        
+    }
     
     
     
@@ -82,6 +96,8 @@
 {
     // Added a target to the UIButton to call a function called onClick when the user presses the Login button. If the user has not entered any text into the UITextField, display in the UILabel, "Username Cannot be Empty". Otherwise, display "User: username has been logged in".
     
+    // Login Button
+    
     if (button.tag == LOGIN)
     {
         NSString *username = usernameField.text;
@@ -94,9 +110,31 @@
             NSString *loggedIn = [[NSString alloc] initWithFormat:@"User: %@ has been logged in", username];
             enterUserMsg.text = loggedIn;
         }
-    
-    
     }
+    
+    // Added an action to the Date button that when clicked, it will call the same onClick handler already defined
+    
+    // Date Button
+    
+    else if (button.tag == DATE)
+    {
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        
+        if (dateFormatter != nil)
+        {
+            [dateFormatter setDateFormat:@"MMMM d, yyyy [h:mm a] zzz"];
+            NSString *dateStr = [dateFormatter stringFromDate:date];
+            
+            UIAlertView *dateAlert = [[UIAlertView alloc] initWithTitle:@"Today's Date" message:dateStr delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            if (dateAlert != nil)
+            {
+                [dateAlert show];
+            }
+                                 
+            
+        }
+     }
     
     
     

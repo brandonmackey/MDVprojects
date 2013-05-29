@@ -14,6 +14,7 @@
     UITextField *usernameField;
     UIButton *login;
     UILabel *enterUserMsg;
+    UIButton *dateBtn;
     
 }
 
