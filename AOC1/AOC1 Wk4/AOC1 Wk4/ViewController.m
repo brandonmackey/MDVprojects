@@ -23,7 +23,9 @@
 
 - (void)viewDidLoad
 {
-    // DISMISS the Keyborad, Added a full screen custom button hidden and when clicked outside the keyborad or text field the keyboard retracts 
+    // Added a full screen custom button hidden and when clicked outside the keyborad or text field the keyboard retracts
+    
+    // DISMISS the Keyborad, 
     
     dismissBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -188,12 +190,6 @@
         infoLabel.text = @"This application was created by Brandon Mackey";
     }
 }
-
--(IBAction)textFieldDidEndEditing:(id)sender
-{
-    [sender resignFirstResponder];
-}
-
 
 - (void)didReceiveMemoryWarning
 {
