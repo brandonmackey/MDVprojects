@@ -15,7 +15,8 @@
     UIButton *login;
     UILabel *enterUserMsg;
     UIButton *dateBtn;
-    
+    UIButton *info;
+    UILabel *infoLabel;
 }
 
 @end

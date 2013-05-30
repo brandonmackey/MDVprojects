@@ -10,6 +10,7 @@
 
 #define LOGIN 0
 #define DATE 1
+#define INFO 2
 
 
 @interface ViewController ()
@@ -84,8 +85,30 @@
                                                                         
     }
     
+    // Created a UIButton for INFO
     
+    info = [UIButton buttonWithType:UIButtonTypeInfoLight];
     
+    if (info != nil)
+    {
+        info.tag = INFO;
+        info.frame = CGRectMake(10.0f, 300.0f, 25.0f, 30.0f);
+        [info addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:info];
+        
+    }
+    
+    // Created a INFO Label
+    
+    infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 350.0f, 305.0f, 80.0f)];
+    
+    if (infoLabel != nil)
+    {
+        infoLabel.textColor = [UIColor redColor];
+        infoLabel.backgroundColor = [UIColor clearColor];
+        infoLabel.numberOfLines = 2;
+        [self.view addSubview:infoLabel];
+    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -131,16 +154,18 @@
             {
                 [dateAlert show];
             }
-                                 
-            
         }
      }
     
+    // Added when the INFO button is pressed, the text (This application was created by Brandon Mackey) appear in the info UILabel
     
+    // INFO Button
     
-    
+    else if (button.tag == INFO)
+    {
+        infoLabel.text = @"This application was created by Brandon Mackey";
+    }
 }
-
 
 - (void)didReceiveMemoryWarning
 {
