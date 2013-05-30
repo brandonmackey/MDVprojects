@@ -11,6 +11,7 @@
 #define LOGIN 0
 #define DATE 1
 #define INFO 2
+#define DISMISS 3
 
 
 @interface ViewController ()
@@ -19,8 +20,20 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad
 {
+    // DISMISS the Keyborad, Added a full screen custom button hidden and when clicked outside the keyborad or text field the keyboard retracts 
+    
+    dismissBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    if (dismissBtn != nil)
+    {
+        dismissBtn.tag = DISMISS;
+        dismissBtn.frame = CGRectMake(0.0f, 0.0f, 320.0f, 460.0f);
+        [dismissBtn addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:dismissBtn];
+    }
     
     // ADDED A UILabel Username:
     
@@ -30,6 +43,7 @@
         userName.text = @"Username:";
         userName.backgroundColor = [UIColor clearColor];
         [self.view addSubview:userName];
+        
         
     }
     
@@ -42,6 +56,7 @@
         usernameField.borderStyle = UITextBorderStyleRoundedRect;
         usernameField.placeholder = @"Enter Username";
         [self.view addSubview:usernameField];
+        
     }
     
     // Created a (Login) UIButton for the TextField userName
@@ -56,6 +71,8 @@
         [login addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:login];
     }
+    
+   
     
     // Created another UILabel beneath with the default text "Please Enter Username"
     
@@ -135,6 +152,11 @@
         }
     }
     
+    else if (button.tag == DISMISS)
+    {
+        [usernameField resignFirstResponder];
+    }
+    
     // Added an action to the Date button that when clicked, it will call the same onClick handler already defined
     
     // Date Button
@@ -167,10 +189,15 @@
     }
 }
 
+-(IBAction)textFieldDidEndEditing:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end

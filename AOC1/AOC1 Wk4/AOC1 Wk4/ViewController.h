@@ -13,6 +13,7 @@
     UILabel *userName;
     UITextField *usernameField;
     UIButton *login;
+    UIButton *dismissBtn;
     UILabel *enterUserMsg;
     UIButton *dateBtn;
     UIButton *info;
