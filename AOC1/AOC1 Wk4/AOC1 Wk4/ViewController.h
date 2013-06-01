@@ -10,10 +10,10 @@
 
 @interface ViewController : UIViewController
 {
+    UIButton *dismissBtn;
     UILabel *userName;
     UITextField *usernameField;
     UIButton *login;
-    UIButton *dismissBtn;
     UILabel *enterUserMsg;
     UIButton *dateBtn;
     UIButton *info;
