@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		418CDD8E177B745B00AF67CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418CDD8D177B745B00AF67CE /* UIKit.framework */; };
+		418CDD90177B745B00AF67CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418CDD8F177B745B00AF67CE /* Foundation.framework */; };
+		418CDD92177B745B00AF67CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418CDD91177B745B00AF67CE /* CoreGraphics.framework */; };
+		418CDD98177B745B00AF67CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 418CDD96177B745B00AF67CE /* InfoPlist.strings */; };
+		418CDD9A177B745B00AF67CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 418CDD99177B745B00AF67CE /* main.m */; };
+		418CDD9E177B745B00AF67CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 418CDD9D177B745B00AF67CE /* AppDelegate.m */; };
+		418CDDA0177B745B00AF67CE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 418CDD9F177B745B00AF67CE /* Default.png */; };
+		418CDDA2177B745B00AF67CE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 418CDDA1177B745B00AF67CE /* Default@2x.png */; };
+		418CDDA4177B745B00AF67CE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 418CDDA3177B745B00AF67CE /* Default-568h@2x.png */; };
+		418CDDA7177B745B00AF67CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418CDDA6177B745B00AF67CE /* ViewController.m */; };
+		418CDDAA177B745B00AF67CE /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418CDDA8177B745B00AF67CE /* ViewController_iPhone.xib */; };
+		418CDDAD177B745B00AF67CE /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418CDDAB177B745B00AF67CE /* ViewController_iPad.xib */; };
+		418CDDB5177C92FB00AF67CE /* myFitness.m in Sources */ = {isa = PBXBuildFile; fileRef = 418CDDB4177C92FB00AF67CE /* myFitness.m */; };
+		418CDDB8177C935A00AF67CE /* baseFitness.m in Sources */ = {isa = PBXBuildFile; fileRef = 418CDDB7177C935A00AF67CE /* baseFitness.m */; };
+		418CDDBB177C93B600AF67CE /* runFitness.m in Sources */ = {isa = PBXBuildFile; fileRef = 418CDDBA177C93B600AF67CE /* runFitness.m */; };
+		418CDDBE177C93E900AF67CE /* pushupFitness.m in Sources */ = {isa = PBXBuildFile; fileRef = 418CDDBD177C93E900AF67CE /* pushupFitness.m */; };
+		418CDDC1177C93FE00AF67CE /* situpFitness.m in Sources */ = {isa = PBXBuildFile; fileRef = 418CDDC0177C93FE00AF67CE /* situpFitness.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		418CDD8A177B745B00AF67CE /* AOC2-Wk1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AOC2-Wk1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		418CDD8D177B745B00AF67CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		418CDD8F177B745B00AF67CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		418CDD91177B745B00AF67CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		418CDD95177B745B00AF67CE /* AOC2-Wk1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AOC2-Wk1-Info.plist"; sourceTree = "<group>"; };
+		418CDD97177B745B00AF67CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		418CDD99177B745B00AF67CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		418CDD9B177B745B00AF67CE /* AOC2-Wk1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AOC2-Wk1-Prefix.pch"; sourceTree = "<group>"; };
+		418CDD9C177B745B00AF67CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		418CDD9D177B745B00AF67CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		418CDD9F177B745B00AF67CE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		418CDDA1177B745B00AF67CE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		418CDDA3177B745B00AF67CE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		418CDDA5177B745B00AF67CE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		418CDDA6177B745B00AF67CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		418CDDA9177B745B00AF67CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		418CDDAC177B745B00AF67CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		418CDDB3177C92FB00AF67CE /* myFitness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myFitness.h; sourceTree = "<group>"; };
+		418CDDB4177C92FB00AF67CE /* myFitness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myFitness.m; sourceTree = "<group>"; };
+		418CDDB6177C935A00AF67CE /* baseFitness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseFitness.h; sourceTree = "<group>"; };
+		418CDDB7177C935A00AF67CE /* baseFitness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseFitness.m; sourceTree = "<group>"; };
+		418CDDB9177C93B600AF67CE /* runFitness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = runFitness.h; sourceTree = "<group>"; };
+		418CDDBA177C93B600AF67CE /* runFitness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = runFitness.m; sourceTree = "<group>"; };
+		418CDDBC177C93E900AF67CE /* pushupFitness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pushupFitness.h; sourceTree = "<group>"; };
+		418CDDBD177C93E900AF67CE /* pushupFitness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pushupFitness.m; sourceTree = "<group>"; };
+		418CDDBF177C93FE00AF67CE /* situpFitness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = situpFitness.h; sourceTree = "<group>"; };
+		418CDDC0177C93FE00AF67CE /* situpFitness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = situpFitness.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		418CDD87177B745B00AF67CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				418CDD8E177B745B00AF67CE /* UIKit.framework in Frameworks */,
+				418CDD90177B745B00AF67CE /* Foundation.framework in Frameworks */,
+				418CDD92177B745B00AF67CE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		418CDD81177B745B00AF67CE = {
+			isa = PBXGroup;
+			children = (
+				418CDD93177B745B00AF67CE /* AOC2-Wk1 */,
+				418CDD8C177B745B00AF67CE /* Frameworks */,
+				418CDD8B177B745B00AF67CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		418CDD8B177B745B00AF67CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				418CDD8A177B745B00AF67CE /* AOC2-Wk1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		418CDD8C177B745B00AF67CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				418CDD8D177B745B00AF67CE /* UIKit.framework */,
+				418CDD8F177B745B00AF67CE /* Foundation.framework */,
+				418CDD91177B745B00AF67CE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		418CDD93177B745B00AF67CE /* AOC2-Wk1 */ = {
+			isa = PBXGroup;
+			children = (
+				418CDD9C177B745B00AF67CE /* AppDelegate.h */,
+				418CDD9D177B745B00AF67CE /* AppDelegate.m */,
+				418CDDA5177B745B00AF67CE /* ViewController.h */,
+				418CDDA6177B745B00AF67CE /* ViewController.m */,
+				418CDDA8177B745B00AF67CE /* ViewController_iPhone.xib */,
+				418CDDAB177B745B00AF67CE /* ViewController_iPad.xib */,
+				418CDD94177B745B00AF67CE /* Supporting Files */,
+				418CDDB3177C92FB00AF67CE /* myFitness.h */,
+				418CDDB4177C92FB00AF67CE /* myFitness.m */,
+				418CDDB6177C935A00AF67CE /* baseFitness.h */,
+				418CDDB7177C935A00AF67CE /* baseFitness.m */,
+				418CDDB9177C93B600AF67CE /* runFitness.h */,
+				418CDDBA177C93B600AF67CE /* runFitness.m */,
+				418CDDBC177C93E900AF67CE /* pushupFitness.h */,
+				418CDDBD177C93E900AF67CE /* pushupFitness.m */,
+				418CDDBF177C93FE00AF67CE /* situpFitness.h */,
+				418CDDC0177C93FE00AF67CE /* situpFitness.m */,
+			);
+			path = "AOC2-Wk1";
+			sourceTree = "<group>";
+		};
+		418CDD94177B745B00AF67CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				418CDD95177B745B00AF67CE /* AOC2-Wk1-Info.plist */,
+				418CDD96177B745B00AF67CE /* InfoPlist.strings */,
+				418CDD99177B745B00AF67CE /* main.m */,
+				418CDD9B177B745B00AF67CE /* AOC2-Wk1-Prefix.pch */,
+				418CDD9F177B745B00AF67CE /* Default.png */,
+				418CDDA1177B745B00AF67CE /* Default@2x.png */,
+				418CDDA3177B745B00AF67CE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		418CDD89177B745B00AF67CE /* AOC2-Wk1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 418CDDB0177B745B00AF67CE /* Build configuration list for PBXNativeTarget "AOC2-Wk1" */;
+			buildPhases = (
+				418CDD86177B745B00AF67CE /* Sources */,
+				418CDD87177B745B00AF67CE /* Frameworks */,
+				418CDD88177B745B00AF67CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AOC2-Wk1";
+			productName = "AOC2-Wk1";
+			productReference = 418CDD8A177B745B00AF67CE /* AOC2-Wk1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		418CDD82177B745B00AF67CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Brandon Mackey";
+			};
+			buildConfigurationList = 418CDD85177B745B00AF67CE /* Build configuration list for PBXProject "AOC2-Wk1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 418CDD81177B745B00AF67CE;
+			productRefGroup = 418CDD8B177B745B00AF67CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				418CDD89177B745B00AF67CE /* AOC2-Wk1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		418CDD88177B745B00AF67CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				418CDD98177B745B00AF67CE /* InfoPlist.strings in Resources */,
+				418CDDA0177B745B00AF67CE /* Default.png in Resources */,
+				418CDDA2177B745B00AF67CE /* Default@2x.png in Resources */,
+				418CDDA4177B745B00AF67CE /* Default-568h@2x.png in Resources */,
+				418CDDAA177B745B00AF67CE /* ViewController_iPhone.xib in Resources */,
+				418CDDAD177B745B00AF67CE /* ViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		418CDD86177B745B00AF67CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				418CDD9A177B745B00AF67CE /* main.m in Sources */,
+				418CDD9E177B745B00AF67CE /* AppDelegate.m in Sources */,
+				418CDDA7177B745B00AF67CE /* ViewController.m in Sources */,
+				418CDDB5177C92FB00AF67CE /* myFitness.m in Sources */,
+				418CDDB8177C935A00AF67CE /* baseFitness.m in Sources */,
+				418CDDBB177C93B600AF67CE /* runFitness.m in Sources */,
+				418CDDBE177C93E900AF67CE /* pushupFitness.m in Sources */,
+				418CDDC1177C93FE00AF67CE /* situpFitness.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		418CDD96177B745B00AF67CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				418CDD97177B745B00AF67CE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		418CDDA8177B745B00AF67CE /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				418CDDA9177B745B00AF67CE /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		418CDDAB177B745B00AF67CE /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				418CDDAC177B745B00AF67CE /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		418CDDAE177B745B00AF67CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		418CDDAF177B745B00AF67CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		418CDDB1177B745B00AF67CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AOC2-Wk1/AOC2-Wk1-Prefix.pch";
+				INFOPLIST_FILE = "AOC2-Wk1/AOC2-Wk1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		418CDDB2177B745B00AF67CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AOC2-Wk1/AOC2-Wk1-Prefix.pch";
+				INFOPLIST_FILE = "AOC2-Wk1/AOC2-Wk1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		418CDD85177B745B00AF67CE /* Build configuration list for PBXProject "AOC2-Wk1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				418CDDAE177B745B00AF67CE /* Debug */,
+				418CDDAF177B745B00AF67CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		418CDDB0177B745B00AF67CE /* Build configuration list for PBXNativeTarget "AOC2-Wk1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				418CDDB1177B745B00AF67CE /* Debug */,
+				418CDDB2177B745B00AF67CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 418CDD82177B745B00AF67CE /* Project object */;
+}
