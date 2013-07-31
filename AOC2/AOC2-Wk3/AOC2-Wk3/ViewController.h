@@ -7,15 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "eventViewController.h"
 
-@interface ViewController : UIViewController 
+@interface ViewController : UIViewController <eventViewDelegate>
 
 {
-
     IBOutlet UIButton *addEventButton;
-
+    IBOutlet UITextView *eventSaved;
+    id <eventViewDelegate> delegate;
+    NSString *enterStr;
+    NSString *saveStr;
 }
 
+@property (strong) id <eventViewDelegate> delegate;
 
 -(IBAction)onClick:(id)sender;
 
