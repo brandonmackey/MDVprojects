@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41B454AE17B33E9E00175DC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B454AD17B33E9E00175DC7 /* UIKit.framework */; };
+		41B454B017B33E9E00175DC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B454AF17B33E9E00175DC7 /* Foundation.framework */; };
+		41B454B217B33E9E00175DC7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B454B117B33E9E00175DC7 /* CoreGraphics.framework */; };
+		41B454B817B33E9E00175DC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41B454B617B33E9E00175DC7 /* InfoPlist.strings */; };
+		41B454BA17B33E9E00175DC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B454B917B33E9E00175DC7 /* main.m */; };
+		41B454BE17B33E9E00175DC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B454BD17B33E9E00175DC7 /* AppDelegate.m */; };
+		41B454C017B33E9F00175DC7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B454BF17B33E9F00175DC7 /* Default.png */; };
+		41B454C217B33E9F00175DC7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B454C117B33E9F00175DC7 /* Default@2x.png */; };
+		41B454C417B33E9F00175DC7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B454C317B33E9F00175DC7 /* Default-568h@2x.png */; };
+		41B454C717B33E9F00175DC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B454C617B33E9F00175DC7 /* ViewController.m */; };
+		41B454CA17B33E9F00175DC7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41B454C817B33E9F00175DC7 /* ViewController.xib */; };
+		41B454D617B345F600175DC7 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B454D417B345F600175DC7 /* secondViewController.m */; };
+		41B454D717B345F600175DC7 /* secondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41B454D517B345F600175DC7 /* secondViewController.xib */; };
+		41B454E217B4130900175DC7 /* CustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B454E117B4130900175DC7 /* CustomTableCell.m */; };
+		41B454E617B4143300175DC7 /* CustomCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41B454E517B4143300175DC7 /* CustomCellView.xib */; };
+		41B454E817B425FC00175DC7 /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41B454E717B425FC00175DC7 /* car.jpg */; };
+		41B454EA17B4295400175DC7 /* Audi.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B454E917B4295400175DC7 /* Audi.png */; };
+		41B454EC17B4296900175DC7 /* BMW.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B454EB17B4296900175DC7 /* BMW.png */; };
+		41B454FE17B445BC00175DC7 /* buick.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B454FD17B445BC00175DC7 /* buick.png */; };
+		41B4550017B4473A00175DC7 /* chev.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B454FF17B4473A00175DC7 /* chev.png */; };
+		41B4550417B449B000175DC7 /* fiat.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4550317B449B000175DC7 /* fiat.png */; };
+		41B4550617B44ABC00175DC7 /* dodge.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4550517B44ABC00175DC7 /* dodge.png */; };
+		41B4550817B44B4C00175DC7 /* ford.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4550717B44B4C00175DC7 /* ford.png */; };
+		41B4551417B461D300175DC7 /* GMC.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4551317B461D300175DC7 /* GMC.png */; };
+		41B4551617B462C000175DC7 /* honda.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4551517B462C000175DC7 /* honda.png */; };
+		41B4551817B4630700175DC7 /* hummer.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4551717B4630700175DC7 /* hummer.png */; };
+		41B4551A17B473F600175DC7 /* jeep.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4551917B473F600175DC7 /* jeep.png */; };
+		41B4551C17B4748400175DC7 /* kia.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4551B17B4748400175DC7 /* kia.png */; };
+		41B4551E17B475C700175DC7 /* lexus.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4551D17B475C700175DC7 /* lexus.png */; };
+		41B4552017B476E400175DC7 /* mazda.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4551F17B476E400175DC7 /* mazda.png */; };
+		41B4552217B4775A00175DC7 /* MINI.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4552117B4775A00175DC7 /* MINI.png */; };
+		41B4552417B477AF00175DC7 /* porsche.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4552317B477AF00175DC7 /* porsche.png */; };
+		41B4552617B4780500175DC7 /* scion.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4552517B4780500175DC7 /* scion.png */; };
+		41B4552817B478DB00175DC7 /* smart.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4552717B478DB00175DC7 /* smart.png */; };
+		41B4552A17B4798800175DC7 /* toyota.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4552917B4798800175DC7 /* toyota.png */; };
+		41B4552C17B479E400175DC7 /* volvo.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4552B17B479E300175DC7 /* volvo.png */; };
+		41B4552E17B5DBF800175DC7 /* icon114retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4552D17B5DBF700175DC7 /* icon114retina.png */; };
+		41B4553017B5DC3300175DC7 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4552F17B5DC3300175DC7 /* icon57.png */; };
+		41B4553217B5E42400175DC7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4553117B5E42400175DC7 /* Default-568h@2x.png */; };
+		41B4553417B5E52900175DC7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4553317B5E52900175DC7 /* Default@2x.png */; };
+		41B4553617B5E56A00175DC7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B4553517B5E56A00175DC7 /* Default.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		41B454AA17B33E9E00175DC7 /* MDF1-Wk1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDF1-Wk1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41B454AD17B33E9E00175DC7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		41B454AF17B33E9E00175DC7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		41B454B117B33E9E00175DC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		41B454B517B33E9E00175DC7 /* MDF1-Wk1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MDF1-Wk1-Info.plist"; sourceTree = "<group>"; };
+		41B454B717B33E9E00175DC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		41B454B917B33E9E00175DC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		41B454BB17B33E9E00175DC7 /* MDF1-Wk1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDF1-Wk1-Prefix.pch"; sourceTree = "<group>"; };
+		41B454BC17B33E9E00175DC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		41B454BD17B33E9E00175DC7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		41B454BF17B33E9F00175DC7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		41B454C117B33E9F00175DC7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		41B454C317B33E9F00175DC7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		41B454C517B33E9F00175DC7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		41B454C617B33E9F00175DC7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		41B454C917B33E9F00175DC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		41B454D317B345F600175DC7 /* secondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
+		41B454D417B345F600175DC7 /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
+		41B454D517B345F600175DC7 /* secondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = secondViewController.xib; sourceTree = "<group>"; };
+		41B454E017B4130900175DC7 /* CustomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableCell.h; sourceTree = "<group>"; };
+		41B454E117B4130900175DC7 /* CustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableCell.m; sourceTree = "<group>"; };
+		41B454E517B4143300175DC7 /* CustomCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellView.xib; sourceTree = "<group>"; };
+		41B454E717B425FC00175DC7 /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = car.jpg; path = ../../../../../Downloads/car.jpg; sourceTree = "<group>"; };
+		41B454E917B4295400175DC7 /* Audi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Audi.png; path = ../../../../../Downloads/Audi.png; sourceTree = "<group>"; };
+		41B454EB17B4296900175DC7 /* BMW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BMW.png; path = ../../../../../Downloads/BMW.png; sourceTree = "<group>"; };
+		41B454FD17B445BC00175DC7 /* buick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buick.png; path = ../../../../../Downloads/buick.png; sourceTree = "<group>"; };
+		41B454FF17B4473A00175DC7 /* chev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chev.png; path = ../../../../../Downloads/chev.png; sourceTree = "<group>"; };
+		41B4550317B449B000175DC7 /* fiat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fiat.png; path = ../../../../../Downloads/fiat.png; sourceTree = "<group>"; };
+		41B4550517B44ABC00175DC7 /* dodge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dodge.png; path = ../../../../../Downloads/dodge.png; sourceTree = "<group>"; };
+		41B4550717B44B4C00175DC7 /* ford.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ford.png; path = ../../../../../Downloads/ford.png; sourceTree = "<group>"; };
+		41B4551317B461D300175DC7 /* GMC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GMC.png; path = ../../../../../Downloads/GMC.png; sourceTree = "<group>"; };
+		41B4551517B462C000175DC7 /* honda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = honda.png; path = ../../../../../Downloads/honda.png; sourceTree = "<group>"; };
+		41B4551717B4630700175DC7 /* hummer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hummer.png; path = ../../../../../Downloads/hummer.png; sourceTree = "<group>"; };
+		41B4551917B473F600175DC7 /* jeep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jeep.png; path = ../../../../../Downloads/jeep.png; sourceTree = "<group>"; };
+		41B4551B17B4748400175DC7 /* kia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kia.png; path = ../../../../../Downloads/kia.png; sourceTree = "<group>"; };
+		41B4551D17B475C700175DC7 /* lexus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lexus.png; path = ../../../../../Downloads/lexus.png; sourceTree = "<group>"; };
+		41B4551F17B476E400175DC7 /* mazda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mazda.png; path = ../../../../../Downloads/mazda.png; sourceTree = "<group>"; };
+		41B4552117B4775A00175DC7 /* MINI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MINI.png; path = ../../../../../Downloads/MINI.png; sourceTree = "<group>"; };
+		41B4552317B477AF00175DC7 /* porsche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = porsche.png; path = ../../../../../Downloads/porsche.png; sourceTree = "<group>"; };
+		41B4552517B4780500175DC7 /* scion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scion.png; path = ../../../../../Downloads/scion.png; sourceTree = "<group>"; };
+		41B4552717B478DB00175DC7 /* smart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smart.png; path = ../../../../../Downloads/smart.png; sourceTree = "<group>"; };
+		41B4552917B4798800175DC7 /* toyota.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toyota.png; path = ../../../../../Downloads/toyota.png; sourceTree = "<group>"; };
+		41B4552B17B479E300175DC7 /* volvo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = volvo.png; path = ../../../../../Downloads/volvo.png; sourceTree = "<group>"; };
+		41B4552D17B5DBF700175DC7 /* icon114retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon114retina.png; path = ../icon114retina.png; sourceTree = "<group>"; };
+		41B4552F17B5DC3300175DC7 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon57.png; path = ../icon57.png; sourceTree = "<group>"; };
+		41B4553117B5E42400175DC7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		41B4553317B5E52900175DC7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		41B4553517B5E56A00175DC7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41B454A717B33E9E00175DC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41B454AE17B33E9E00175DC7 /* UIKit.framework in Frameworks */,
+				41B454B017B33E9E00175DC7 /* Foundation.framework in Frameworks */,
+				41B454B217B33E9E00175DC7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41B454A117B33E9E00175DC7 = {
+			isa = PBXGroup;
+			children = (
+				41B454B317B33E9E00175DC7 /* MDF1-Wk1 */,
+				41B454AC17B33E9E00175DC7 /* Frameworks */,
+				41B454AB17B33E9E00175DC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		41B454AB17B33E9E00175DC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41B454AA17B33E9E00175DC7 /* MDF1-Wk1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41B454AC17B33E9E00175DC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41B454AD17B33E9E00175DC7 /* UIKit.framework */,
+				41B454AF17B33E9E00175DC7 /* Foundation.framework */,
+				41B454B117B33E9E00175DC7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		41B454B317B33E9E00175DC7 /* MDF1-Wk1 */ = {
+			isa = PBXGroup;
+			children = (
+				41B4552317B477AF00175DC7 /* porsche.png */,
+				41B454BC17B33E9E00175DC7 /* AppDelegate.h */,
+				41B454BD17B33E9E00175DC7 /* AppDelegate.m */,
+				41B454C517B33E9F00175DC7 /* ViewController.h */,
+				41B454C617B33E9F00175DC7 /* ViewController.m */,
+				41B454C817B33E9F00175DC7 /* ViewController.xib */,
+				41B454B417B33E9E00175DC7 /* Supporting Files */,
+				41B454D317B345F600175DC7 /* secondViewController.h */,
+				41B454D417B345F600175DC7 /* secondViewController.m */,
+				41B454D517B345F600175DC7 /* secondViewController.xib */,
+				41B454E017B4130900175DC7 /* CustomTableCell.h */,
+				41B454E117B4130900175DC7 /* CustomTableCell.m */,
+				41B454E517B4143300175DC7 /* CustomCellView.xib */,
+				41B454E717B425FC00175DC7 /* car.jpg */,
+				41B454E917B4295400175DC7 /* Audi.png */,
+				41B454EB17B4296900175DC7 /* BMW.png */,
+				41B454FD17B445BC00175DC7 /* buick.png */,
+				41B454FF17B4473A00175DC7 /* chev.png */,
+				41B4550517B44ABC00175DC7 /* dodge.png */,
+				41B4551317B461D300175DC7 /* GMC.png */,
+				41B4550317B449B000175DC7 /* fiat.png */,
+				41B4550717B44B4C00175DC7 /* ford.png */,
+				41B4551517B462C000175DC7 /* honda.png */,
+				41B4551717B4630700175DC7 /* hummer.png */,
+				41B4551917B473F600175DC7 /* jeep.png */,
+				41B4551B17B4748400175DC7 /* kia.png */,
+				41B4551D17B475C700175DC7 /* lexus.png */,
+				41B4551F17B476E400175DC7 /* mazda.png */,
+				41B4552117B4775A00175DC7 /* MINI.png */,
+				41B4552517B4780500175DC7 /* scion.png */,
+				41B4552717B478DB00175DC7 /* smart.png */,
+				41B4552917B4798800175DC7 /* toyota.png */,
+				41B4552B17B479E300175DC7 /* volvo.png */,
+				41B4552D17B5DBF700175DC7 /* icon114retina.png */,
+				41B4552F17B5DC3300175DC7 /* icon57.png */,
+				41B4553117B5E42400175DC7 /* Default-568h@2x.png */,
+				41B4553317B5E52900175DC7 /* Default@2x.png */,
+				41B4553517B5E56A00175DC7 /* Default.png */,
+			);
+			path = "MDF1-Wk1";
+			sourceTree = "<group>";
+		};
+		41B454B417B33E9E00175DC7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41B454B517B33E9E00175DC7 /* MDF1-Wk1-Info.plist */,
+				41B454B617B33E9E00175DC7 /* InfoPlist.strings */,
+				41B454B917B33E9E00175DC7 /* main.m */,
+				41B454BB17B33E9E00175DC7 /* MDF1-Wk1-Prefix.pch */,
+				41B454BF17B33E9F00175DC7 /* Default.png */,
+				41B454C117B33E9F00175DC7 /* Default@2x.png */,
+				41B454C317B33E9F00175DC7 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41B454A917B33E9E00175DC7 /* MDF1-Wk1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41B454CD17B33E9F00175DC7 /* Build configuration list for PBXNativeTarget "MDF1-Wk1" */;
+			buildPhases = (
+				41B454A617B33E9E00175DC7 /* Sources */,
+				41B454A717B33E9E00175DC7 /* Frameworks */,
+				41B454A817B33E9E00175DC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MDF1-Wk1";
+			productName = "MDF1-Wk1";
+			productReference = 41B454AA17B33E9E00175DC7 /* MDF1-Wk1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41B454A217B33E9E00175DC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Brandon Mackey";
+			};
+			buildConfigurationList = 41B454A517B33E9E00175DC7 /* Build configuration list for PBXProject "MDF1-Wk1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 41B454A117B33E9E00175DC7;
+			productRefGroup = 41B454AB17B33E9E00175DC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41B454A917B33E9E00175DC7 /* MDF1-Wk1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41B454A817B33E9E00175DC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41B454B817B33E9E00175DC7 /* InfoPlist.strings in Resources */,
+				41B454C017B33E9F00175DC7 /* Default.png in Resources */,
+				41B454C217B33E9F00175DC7 /* Default@2x.png in Resources */,
+				41B454C417B33E9F00175DC7 /* Default-568h@2x.png in Resources */,
+				41B454CA17B33E9F00175DC7 /* ViewController.xib in Resources */,
+				41B454D717B345F600175DC7 /* secondViewController.xib in Resources */,
+				41B454E617B4143300175DC7 /* CustomCellView.xib in Resources */,
+				41B454E817B425FC00175DC7 /* car.jpg in Resources */,
+				41B454EA17B4295400175DC7 /* Audi.png in Resources */,
+				41B454EC17B4296900175DC7 /* BMW.png in Resources */,
+				41B454FE17B445BC00175DC7 /* buick.png in Resources */,
+				41B4550017B4473A00175DC7 /* chev.png in Resources */,
+				41B4550417B449B000175DC7 /* fiat.png in Resources */,
+				41B4550617B44ABC00175DC7 /* dodge.png in Resources */,
+				41B4550817B44B4C00175DC7 /* ford.png in Resources */,
+				41B4551417B461D300175DC7 /* GMC.png in Resources */,
+				41B4551617B462C000175DC7 /* honda.png in Resources */,
+				41B4551817B4630700175DC7 /* hummer.png in Resources */,
+				41B4551A17B473F600175DC7 /* jeep.png in Resources */,
+				41B4551C17B4748400175DC7 /* kia.png in Resources */,
+				41B4551E17B475C700175DC7 /* lexus.png in Resources */,
+				41B4552017B476E400175DC7 /* mazda.png in Resources */,
+				41B4552217B4775A00175DC7 /* MINI.png in Resources */,
+				41B4552417B477AF00175DC7 /* porsche.png in Resources */,
+				41B4552617B4780500175DC7 /* scion.png in Resources */,
+				41B4552817B478DB00175DC7 /* smart.png in Resources */,
+				41B4552A17B4798800175DC7 /* toyota.png in Resources */,
+				41B4552C17B479E400175DC7 /* volvo.png in Resources */,
+				41B4552E17B5DBF800175DC7 /* icon114retina.png in Resources */,
+				41B4553017B5DC3300175DC7 /* icon57.png in Resources */,
+				41B4553217B5E42400175DC7 /* Default-568h@2x.png in Resources */,
+				41B4553417B5E52900175DC7 /* Default@2x.png in Resources */,
+				41B4553617B5E56A00175DC7 /* Default.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41B454A617B33E9E00175DC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41B454BA17B33E9E00175DC7 /* main.m in Sources */,
+				41B454BE17B33E9E00175DC7 /* AppDelegate.m in Sources */,
+				41B454C717B33E9F00175DC7 /* ViewController.m in Sources */,
+				41B454D617B345F600175DC7 /* secondViewController.m in Sources */,
+				41B454E217B4130900175DC7 /* CustomTableCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		41B454B617B33E9E00175DC7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41B454B717B33E9E00175DC7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		41B454C817B33E9F00175DC7 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41B454C917B33E9F00175DC7 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		41B454CB17B33E9F00175DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		41B454CC17B33E9F00175DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		41B454CE17B33E9F00175DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MDF1-Wk1/MDF1-Wk1-Prefix.pch";
+				INFOPLIST_FILE = "MDF1-Wk1/MDF1-Wk1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		41B454CF17B33E9F00175DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MDF1-Wk1/MDF1-Wk1-Prefix.pch";
+				INFOPLIST_FILE = "MDF1-Wk1/MDF1-Wk1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41B454A517B33E9E00175DC7 /* Build configuration list for PBXProject "MDF1-Wk1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41B454CB17B33E9F00175DC7 /* Debug */,
+				41B454CC17B33E9F00175DC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41B454CD17B33E9F00175DC7 /* Build configuration list for PBXNativeTarget "MDF1-Wk1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41B454CE17B33E9F00175DC7 /* Debug */,
+				41B454CF17B33E9F00175DC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41B454A217B33E9E00175DC7 /* Project object */;
+}
