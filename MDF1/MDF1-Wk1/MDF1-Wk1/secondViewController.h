@@ -16,7 +16,7 @@
 
 -(IBAction)onClose:(id)sender;
 
-@property IBOutlet UILabel *fav;
-@property IBOutlet UILabel *price;
+@property (nonatomic, strong) UILabel *fav;
+@property (nonatomic, strong) UILabel *price;
 
 @end

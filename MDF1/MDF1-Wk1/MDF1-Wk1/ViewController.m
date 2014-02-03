@@ -32,7 +32,7 @@
             myPrice = [[NSMutableArray alloc] initWithObjects:@"114,900",@"74,000",@"33,135",@"23,345",@"25,995",@"22,000",@"55,595",@"56,685",@"29,450",@"44,995",@"28,795",@"35,100",@"375,000",@"20,990",@"32,300",@"130,400",@"25,255",@"12,490",@"78,555",@"41,200", nil];
     
                        
-                       doneButton.hidden = true;
+    doneButton.hidden = true;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -255,7 +255,6 @@
     
     
     
-//    NSLog(@"row = %d", indexPath.row);
 }
 
 
